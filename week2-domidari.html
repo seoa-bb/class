@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>도미다리 개별과제 (2주차) — 소문 장치</title>
+<style>
+  :root{
+    --bg:#f6f2ea;--card:#fffdf8;--ink:#2c2620;--mute:#7a6f60;--soft:#9a8d7a;
+    --wine:#7c4a52;--gold:#b08a4f;--line:#e6ddcd;--deep:#2d2926;
+    --good:#5a6b4d;--goodbg:#eef2e9;--badbg:#f3ece3
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.72;font-size:16px}
+  .wrap{max-width:780px;margin:0 auto;padding:52px 22px 96px}
+  .kicker{font-size:12.5px;letter-spacing:.16em;color:var(--wine);font-weight:800;text-transform:uppercase}
+  h1{font-size:31px;margin:12px 0 8px;letter-spacing:-.01em;line-height:1.25}
+  .lead{color:var(--mute);font-size:15px;margin-bottom:6px}
+  h2{font-size:21px;margin:46px 0 14px;padding-bottom:10px;border-bottom:2px solid var(--line);letter-spacing:-.01em}
+  h3{font-size:16.5px;margin:24px 0 8px;color:var(--deep)}
+  p{margin:10px 0}
+  b{color:var(--deep)}
+  .mute{color:var(--mute);font-size:14px}
+  ul{margin:8px 0 8px;padding-left:20px}
+  li{margin:6px 0}
+  .flow{display:flex;flex-direction:column;gap:0;margin:18px 0}
+  .step{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px dashed var(--line)}
+  .step:last-child{border-bottom:none}
+  .dot{flex:none;width:30px;height:30px;border-radius:8px;background:var(--wine);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;margin-top:2px}
+  .step .t{font-weight:800;color:var(--deep)}
+  .reveal{background:var(--deep);color:#fbf7ee;border-radius:16px;padding:24px 26px;margin:22px 0}
+  .reveal .big{font-size:19px;font-weight:800;line-height:1.5;margin:0 0 6px}
+  .reveal .sub{color:#d8c9b2;font-size:14.5px;margin:0}
+  .note{background:var(--badbg);border:1px solid var(--line);border-left:4px solid var(--wine);
+    border-radius:10px;padding:14px 16px;margin:16px 0;font-size:14.5px}
+  .declare{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;margin:18px 0;
+    box-shadow:0 12px 28px rgba(44,38,32,.06)}
+  .declare .body{font-size:16.5px;line-height:1.85}
+  .val{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px dashed var(--line)}
+  .val:last-child{border-bottom:none}
+  .vk{flex:none;width:84px;font-weight:800;color:var(--wine);font-size:14px;padding-top:1px}
+  .chip{display:inline-block;background:var(--goodbg);color:var(--good);border:1px solid #cdd8c2;
+    border-radius:999px;padding:5px 14px;font-weight:700;font-size:14px;margin:4px 6px 4px 0}
+  .pick{background:var(--deep);color:#fff;border:none}
+  .table{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:14px 0}
+  .row{display:flex;border-top:1px solid var(--line)}
+  .row:first-child{border-top:none}
+  .cell{padding:12px 14px;font-size:14.5px}
+  .cell.k{flex:none;width:120px;background:#f2ebdd;font-weight:800;color:var(--deep)}
+  .cell.v{flex:1}
+  .ok{color:var(--good);font-weight:800}
+  .obj{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:12px 0}
+  .obj .ttl{font-weight:800;color:var(--deep);margin-bottom:4px}
+  .todo{background:var(--badbg);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:16px 0}
+  footer{margin-top:54px;color:var(--soft);font-size:12.5px;text-align:center;line-height:1.7}
+  @media(max-width:520px){.cell.k{width:92px}.vk{width:68px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">소문설계 1기 · 개별과제 (2주차)</div>
+  <h1>동래도미다리횟집 — 우리가 숨겨온 정성을 꺼내다</h1>
+  <p class="lead">소문 장치 만들기: 생각의 흐름 → 정리 → 가치 선언문 · 소문 문장 · 오브제</p>
+
+  <!-- 1. 생각의 흐름 -->
+  <h2>1. 생각의 흐름 — 막막함에서 깨달음까지</h2>
+  <div class="flow">
+    <div class="step"><span class="dot">1</span><span><span class="t">막막했다.</span> 강의·조별회의·회식 내내 “이게 소문거리가 되나?” 싶었다. 특히 라본의 <b>‘유일한·최초의’</b>처럼, 우리도 그런 게 있어야 하나 싶어 더 막혔다.</span></div>
+    <div class="step"><span class="dot">2</span><span><span class="t">질문했다.</span> 그랬더니 강사님: <b>“꼭 ‘최초·유일한 제품’이 아니어도 된다. 희소성 있는 ‘행위(行為)’도 소문거리가 된다.”</b> (예: 자주 가는 횟집의 물기 빼기, 수조 관리)</span></div>
+    <div class="step"><span class="dot">3</span><span><span class="t">그래도 의심했다.</span> “그 정도가 소문거리가 되나?” — 사실은 내가 <b>회·손질에 대한 기본 지식이 없어서</b>, 우리 신랑의 손질이 얼마나 희소한지 가늠이 안 됐던 것.</span></div>
+    <div class="step"><span class="dot">4</span><span><span class="t">머리를 맞았다.</span> 나는 바쁜 타임을 대비해 <b>일부 어종을 미리 잡아 해동지로 싸 물기·기름을 빼두고</b> 있었다. 그런데 <b>‘활어 횟집’이라</b> 이걸 오히려 <b>숨겨야 한다</b>고 생각했다. 강사님: <b>“그게 바로 소문거리다. 당연하게 생각하지 마라.”</b></span></div>
+    <div class="step"><span class="dot">5</span><span><span class="t">정리됐다.</span> 신랑은 음식엔 정성인데 <b>그게 마케팅거리인 줄 몰랐고</b>, 나는 표현은 하는데 <b>회를 몰라 풀어내질 못했다.</b> 둘이 소통하니 비로소 풀렸다.</span></div>
+  </div>
+
+  <div class="reveal">
+    <p class="big">우리가 ‘숨기던 것’이 사실은 ‘보물’이었다.</p>
+    <p class="sub">미리 잡아 물기를 빼는 정성 — 숨길 게 아니라, 도미다리만의 소문거리였다.</p>
+  </div>
+
+  <!-- 2. 핵심 정리 -->
+  <h2>2. 핵심 정리</h2>
+
+  <h3>소문거리 = “물기를 제대로, 여러 번 짜내는 정성”</h3>
+  <p>손님들은 늘 <b>“이 집 회맛이 다르다, 찰지다”</b>고 인정해 주는데, 정작 우리는 <b>왜 다른지를 똑 부러지게 말하지 못했다.</b> 그 이유가 바로 이것 — 물 잡내를 누구보다 싫어하는 사장이, <b>회의 물기를 한 번이 아니라 여러 번 닦아낸다.</b> 그래서 찰지고 잡내가 없다.</p>
+
+  <div class="note">
+    <b>⚠️ 표현 주의 — 헤드라인은 ‘반숙성·숙성’이 아니다.</b><br>
+    강사님: “‘반숙성·숙성·미리 준비했다’는 말은 (간판으로) 쓰지 마라.” (활어집 정체성과 충돌 + 진짜 숙성도 아니므로) → 손님 앞에선 <b>“물기를 제대로 여러 번 닦아낸다”</b>는 <b>정성·행위</b>로 표현. 손님이 “숙성 같다”고 하면 “숙성은 아니고, 물기를 제대로 빼낸 거예요”로.
+  </div>
+
+  <h3>왜 이게 소문거리가 되나 (강의 기준 통과)</h3>
+  <ul>
+    <li><b>희소</b> — 회 매니아인 강사조차 “이렇게 손질해주는 집을 찾는데, 다들 숨기거나 표현을 안 한다”고 했다. 우리는 잘하면서 숨기고만 있었다.</li>
+    <li><b>과시거리</b> — 회 좀 아는 손님이 “여긴 물을 이렇게 짜내고 일부러 미리 손질해서 회맛이 다르다”며 <b>남을 데려와 아는 척할 수 있다.</b> (자기참조·내면욕구)</li>
+    <li><b>업종 고유</b> — 다른 업종에 갖다 붙이면 말이 안 된다 → 횟집에만 성립하는 ‘우리만의’ 소문거리.</li>
+  </ul>
+
+  <h3>그동안 정작 ‘메인(회)’을 못 자랑했다</h3>
+  <p>지금까지 <b>수제 쌈장·수제 초장·직접 끓인 매운탕</b> 같은 <b>곁들이</b>만 자랑했고, “회는 도미다리” 같은 <b>막연한 말</b>만 했다. 이제 <b>회 자체의 차별점(물기 정성·어종별 맞춤 손질)</b>을 당당히 자랑한다. 곁들이 자랑은 그 위에 얹는다.</p>
+
+  <!-- 3. 개별과제 -->
+  <h2>3. 개별과제 — 도미다리 소문 장치</h2>
+
+  <h3>① 가치 선언문</h3>
+  <p class="mute">공감 → 기능 가치 → 사용 가치 → 정서 가치로 이어 하나의 방향을 세운다.</p>
+  <div class="declare">
+    <div class="body">
+      활어회는 흔히 <b>‘갓 잡은 게 최고’</b>라고 합니다. 하지만 갓 잡은 회의 <b>물기와 잡내</b>를 그대로 두면, 정작 회의 찰진 맛은 묻혀버립니다.<br><br>
+      그래서 동래도미다리횟집은 ‘활어’라는 말 뒤에 <b>숨겨온 정성</b>을 꺼냅니다. 물 잡내를 누구보다 싫어하는 사장이, <b>회 한 점의 물기를 한 번이 아니라 몇 번이고 닦아냅니다.</b> 어종의 결에 맞춰 다르게 손질합니다.<br><br>
+      그래서 도미다리의 회는 갓 잡은 싱싱함 위에 <b>찰진 식감과 깊은 감칠맛, 그리고 잡내 없는 깔끔함</b>이 더해집니다. 손님은 <b>“이렇게까지 하는 집이 있구나” 하고 안심하고</b>, 아끼는 사람을 데려와 자랑하게 됩니다.<br><br>
+      <b>동래도미다리횟집은 단순히 활어를 파는 집이 아니라, 회의 물기까지 책임지는 집입니다.</b>
+    </div>
+  </div>
+  <div class="table">
+    <div class="row"><div class="cell k">공감</div><div class="cell v">“갓 잡은 게 최고”라지만, 물기·잡내를 두면 찰진 맛이 묻힌다 — 손님이 막연히 느끼던 ‘맛의 차이’에 공감.</div></div>
+    <div class="row"><div class="cell k">기능 가치</div><div class="cell v">물기를 한 번이 아니라 <b>여러 번 닦아내는</b> 손질(어종별 맞춤). 물 최대한 안 닿게.</div></div>
+    <div class="row"><div class="cell k">사용 가치</div><div class="cell v">잡내 없이 <b>찰지고 감칠맛 도는 회</b>를 먹게 된다.</div></div>
+    <div class="row"><div class="cell k">정서 가치</div><div class="cell v">“이렇게까지 하는구나”라는 <b>안심</b>, 그리고 남에게 데려와 <b>자랑하는 뿌듯함.</b></div></div>
+  </div>
+
+  <h3>② 소문 문장 (한 줄)</h3>
+  <p class="mute">가치 선언문에서 가장 희소·자극적인 한 줄을 뽑는다.</p>
+  <div>
+    <span class="chip pick">★ “물기를 다섯 번 닦아낸 회.”</span>
+    <span class="chip">“물 잡내를 가장 싫어하는 사장의 회.”</span>
+    <span class="chip">“갓 잡은 회에, 정성 한 번 더.”</span>
+  </div>
+  <p class="mute">※ ‘다섯 번’ 등 숫자는 신랑분 실제 기준으로 확정(어종별로 다름).</p>
+  <h3 style="font-size:15px;margin-top:18px">소문 문장 7가지 자가검증 — “물기를 다섯 번 닦아낸 회”</h3>
+  <div class="table">
+    <div class="row"><div class="cell k">시장 가치</div><div class="cell v"><span class="ok">✓</span> 잡내 없이 찰진 회 — 손님이 원하는 가치가 들어 있다.</div></div>
+    <div class="row"><div class="cell k">자격</div><div class="cell v"><span class="ok">✓</span> 이렇게까지 표현하는 횟집이 드물다 — 우리만 할 수 있는 이야기.</div></div>
+    <div class="row"><div class="cell k">증명</div><div class="cell v"><span class="ok">✓</span> 실제로 매일 하는 손질 — 손질 장면·해동지가 증거.</div></div>
+    <div class="row"><div class="cell k">단일 가치</div><div class="cell v"><span class="ok">✓</span> ‘물기 닦은 정성’ 하나로 또렷하다.</div></div>
+    <div class="row"><div class="cell k">전달 용이</div><div class="cell v"><span class="ok">✓</span> “거기 회는 물기를 다섯 번 닦는대” — 손님이 그대로 옮기기 쉽다.</div></div>
+    <div class="row"><div class="cell k">이미지화</div><div class="cell v"><span class="ok">✓</span> 물기를 닦는 손 한 장면으로 보여줄 수 있다.</div></div>
+    <div class="row"><div class="cell k">확장력</div><div class="cell v"><span class="ok">✓</span> “왜 다섯 번?”, “어종별 손질”, “물 안 닿는 손질” 등으로 이야기가 뻗는다.</div></div>
+  </div>
+
+  <h3>③ 오브제 / 이미지 (둘 중 하나 제출)</h3>
+  <div class="obj">
+    <div class="ttl">🅐 이미지 — “물기를 닦는 손” 한 장면</div>
+    회 한 점의 물기를 정성스레 닦아내는 <b>사장의 손 클로즈업.</b> (라본이 ‘요리하는 이미지’로 ‘먹을 수 있는 세제’를 직관화했듯) → 한 장으로 ‘정성’을 전달.
+  </div>
+  <div class="obj">
+    <div class="ttl">🅑 오브제 — ‘물기 정성’ 땡스카드 / 손질 영상 QR</div>
+    상에 작은 카드 한 장: <b>“이 회는 물기를 다섯 번 닦아냈습니다.”</b> + 손질 장면 <b>QR.</b><br>
+    <span class="mute">※ 강사님: ‘해동지’를 자랑할 게 아니라 <b>‘물기를 짜내는 정성’</b>을 자랑하라. 해동지는 그걸 위한 도구일 뿐.</span>
+  </div>
+
+  <!-- 4. 정할 것 -->
+  <h2>4. 아직 ‘정할 것’</h2>
+  <div class="todo">
+    <ul style="margin:0">
+      <li><b>숫자 확정</b> — “물기를 ○번 / 잡은 뒤 ○시간” : 신랑분 실제 기준으로(고정 아님).</li>
+      <li><b>‘반숙성’ 단어</b> — 손님 앞 사용 여부(강사님 비권장) : 사장님 결정.</li>
+      <li><b>소금 제공</b> — 좋은 소금 한 테이블 1개(본연의 맛) : 곁들이 보강안으로 넣을지.</li>
+    </ul>
+  </div>
+
+  <footer>
+    동래도미다리횟집 · 소문설계 1기 개별과제 (2주차)<br>
+    회는, 도미다리. 누구와도 편안하게.
+  </footer>
+</div>
+</body>
+</html>
