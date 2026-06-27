@@ -64,6 +64,9 @@
   .nav button:hover{background:#28200f}
   .nav button:disabled{opacity:.35;cursor:default}
   .counter{color:#9c8e78;font-size:14px;font-weight:700;letter-spacing:.05em}
+  .notes{width:100%;max-width:1140px;margin-top:14px;background:#fbf8f1;border:1px solid #e6ddcd;border-left:4px solid #a85563;border-radius:12px;padding:14px 18px}
+  .notes .nl{font-size:12px;font-weight:800;color:#a85563;letter-spacing:.05em;margin-bottom:5px}
+  .notes p{font-size:14.5px;color:#3a322a;line-height:1.65;margin:0}
 </style>
 </head>
 <body>
@@ -101,7 +104,7 @@
       <h2>★ <b>CEO 조찬모임</b>으로 지정 — 두 가지 길로 연결</h2>
       <div class="cards2">
         <div class="card big star"><span class="starpill">★ 주력</span><div class="bnum">①</div><div class="ct">협약 — 남의 모임</div><div class="cs">이미 호스트인 사람과 <b>주고받기</b><br>혜택·매칭나이트 ↔ 단체방문·입소문·새 회원</div><div class="cn">★ 배영순 대표 실제 멤버 = 네트워크 있음</div></div>
-        <div class="card big"><div class="bnum">②</div><div class="ct">직접 개설 — 우리 모임</div><div class="cs"><b>우리가 직접 호스트 = 매체</b>가 된다<br>위스키·와인 취향 소모임을 우리가 연다</div><div class="cn">＝ 강사 “없으면 만든다 (자기 채널)”</div></div>
+        <div class="card big"><div class="bnum">②</div><div class="ct">직접 개설 — 우리 모임</div><div class="cs"><b>‘소모임’ 앱에 우리가 직접 개설</b><br>위스키·와인 취향 모임을 열어 <b>우리가 호스트 = 매체</b></div><div class="cn">＝ 강사 “없으면 만든다 (자기 채널)”</div></div>
       </div>
       <p class="note">→ 여론 주도자 → <b>모임 전체로 확산</b> · 분기 1회+</p>
     </div>
@@ -141,17 +144,28 @@
     <span class="counter" id="counter">1 / 5</span>
     <button id="next">다음 →</button>
   </div>
+
+  <div class="notes"><div class="nl">🎤 발표 멘트 (이 장에서 할 말)</div><p id="note"></p></div>
 </div>
 
 <script>
   const slides=[...document.querySelectorAll('.slide')];
   const counter=document.getElementById('counter');
   const prev=document.getElementById('prev'), next=document.getElementById('next');
+  const noteEl=document.getElementById('note');
+  const notes=[
+    "2조 글래스 코드입니다. 컨셉은 ‘품격 있는 취향 사교 바’ — 소개팅·헌팅이 아니라 같은 취향을 가진 사람을 자연스럽게 발견하는 곳이에요. 소문 문장은 ‘잔으로 인연을 만드는 곳’, 타겟은 사회적으로 자리 잡은 30~40 싱글입니다. 오늘은 이걸 어떻게 퍼뜨릴지 — 온과 매스로 나눠 말씀드릴게요.",
+    "먼저 온입니다. 온은 모두에게 뿌리는 게 아니라, 영향력 있는 한 명을 매체로 삼아 모임 전체로 전염시키는 방식이에요. 그 여론 주도자는 모임 주최자일 수도 있고, 유행에 민감하고 센스 있어 ‘저 사람 추천이면 가볼 만하다’고 사람들이 인정하는 영향력자일 수도 있습니다. 저희 타겟이 모이는 곳을 보니 취미 모임이더라고요 — 조찬모임·소모임 앱·동호회. 글래스 코드가 취향 기반이라 취미 모임과 결이 딱 맞습니다.",
+    "그중 저희는 CEO 조찬모임을 주력으로 정했어요. 배영순 대표님이 실제 멤버라, 강사님이 컨택 1순위로 꼽은 ‘네트워크’가 이미 있거든요. 연결 방법은 두 가지입니다. ① 협약 — 이미 호스트인 사람과 주고받기예요. 저희는 단체 혜택과 매칭 나이트를 주고, 호스트는 단체 방문·입소문·새 회원을 얻습니다. ② 직접 개설 — 호스트가 없으면 강사님 말처럼 ‘없으면 만든다’. ‘소모임’ 앱에 위스키·와인 취향 모임을 우리가 직접 열어서, 우리가 호스트이자 매체가 되는 거죠.",
+    "다음은 매스입니다. 강의에서 매스 매체는 검색·공간·상품·사람·콘텐츠 5가지인데, 저희는 이 중 ‘공간’을 주력으로 골랐어요. 감성 바라서 벽면을 ‘잔으로 인연을 만드는 곳’ 포토존으로 만들면 손님이 인스타에 올려 무료로 퍼집니다. 테이블 안내문으로는 매칭 카드 룰과 리뷰 방향까지 잡고요. 참고로 ‘품격 있는 솔로만 모이는 곳’은 말이 아니라 드레스 코드·잔 가격으로 실제 운영해야 팩트가 됩니다.",
+    "정리하면 — 온으로 영향력자 한 명을 찍어 모임 전체로 퍼뜨리고, 매스로 모두에게 한 문장을 깝니다. 소문거리는 ‘더 낫다’는 우열이 아니라 ‘선이 그어지는 다른 이야기’여야 하고, 글래스 코드가 바로 그 다른 이야기입니다. 이상 2조였습니다. 감사합니다!"
+  ];
   let i=0;
   function show(n){
     i=Math.max(0,Math.min(slides.length-1,n));
     slides.forEach((s,k)=>s.classList.toggle('active',k===i));
     counter.textContent=(i+1)+' / '+slides.length;
+    noteEl.textContent=notes[i];
     prev.disabled=(i===0); next.disabled=(i===slides.length-1);
   }
   prev.onclick=()=>show(i-1); next.onclick=()=>show(i+1);
