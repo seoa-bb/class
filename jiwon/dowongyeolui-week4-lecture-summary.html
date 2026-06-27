@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>도원결의 4강 — 합격 20 체크리스트 & 최종 제출 전략</title>
+<style>
+  :root {
+    --navy: #1a2744;
+    --blue: #2563eb;
+    --blue-light: #3b82f6;
+    --sky: #e8f0fe;
+    --sky2: #dbeafe;
+    --gold: #f59e0b;
+    --green: #059669;
+    --red: #dc2626;
+    --purple: #7c3aed;
+    --teal: #0d9488;
+    --orange: #ea580c;
+    --bg: #f8faff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+  /* NAV */
+  .nav { background: var(--navy); padding: 12px 16px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .nav a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; padding: 4px 10px; border-radius: 6px; transition: background 0.15s; }
+  .nav a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+  .nav a.active { background: var(--blue); color: #fff; }
+  .nav-sep { color: rgba(255,255,255,0.3); font-size: 12px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, var(--navy) 50%, #312e81 100%);
+    color: #fff;
+    padding: 56px 24px 48px;
+    text-align: center;
+  }
+  .hero .badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 999px; padding: 5px 18px; font-size: 13px; letter-spacing: 0.04em; margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(24px, 5.5vw, 40px); font-weight: 900; line-height: 1.25; margin-bottom: 12px; }
+  .hero h1 span { color: #a5b4fc; }
+  .hero .sub { font-size: 15px; opacity: 0.78; max-width: 520px; margin: 0 auto; }
+  .hero .final-badge { margin-top: 20px; display: inline-flex; align-items: center; gap: 6px; background: rgba(245,158,11,0.2); border: 1px solid rgba(245,158,11,0.4); border-radius: 8px; padding: 7px 18px; font-size: 13px; color: #fde68a; }
+
+  /* LAYOUT */
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 16px 80px; }
+
+  /* SECTION */
+  .section { margin-bottom: 48px; }
+  .section-label { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  .section-title { font-size: 20px; font-weight: 800; color: var(--navy); margin-bottom: 16px; }
+
+  /* DIVIDER */
+  hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+  /* CARD */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 24px; margin-bottom: 16px; }
+  .card-title { font-size: 15px; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box { border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; }
+  .highlight-box.blue { background: var(--sky2); border-left: 4px solid var(--blue); }
+  .highlight-box.gold { background: #fffbeb; border-left: 4px solid var(--gold); }
+  .highlight-box.green { background: #f0fdf4; border-left: 4px solid var(--green); }
+  .highlight-box.purple { background: #f5f3ff; border-left: 4px solid var(--purple); }
+  .highlight-box.red { background: #fff1f2; border-left: 4px solid var(--red); }
+  .highlight-box.orange { background: #fff7ed; border-left: 4px solid var(--orange); }
+  .highlight-box.teal { background: #f0fdfa; border-left: 4px solid var(--teal); }
+  .highlight-box h4 { font-size: 14px; font-weight: 800; margin-bottom: 8px; }
+  .highlight-box.blue h4 { color: var(--blue); }
+  .highlight-box.gold h4 { color: #92400e; }
+  .highlight-box.green h4 { color: var(--green); }
+  .highlight-box.purple h4 { color: var(--purple); }
+  .highlight-box.red h4 { color: var(--red); }
+  .highlight-box.orange h4 { color: var(--orange); }
+  .highlight-box.teal h4 { color: var(--teal); }
+  .highlight-box p, .highlight-box li { font-size: 14px; line-height: 1.75; }
+  .highlight-box ul { padding-left: 18px; }
+  .highlight-box li { margin-bottom: 4px; }
+
+  /* QUOTE */
+  .quote { background: var(--sky); border-radius: 10px; padding: 16px 20px; margin-bottom: 16px; border-left: 3px solid var(--blue-light); }
+  .quote p { font-size: 15px; font-weight: 700; color: var(--navy); font-style: italic; }
+  .quote .quote-sub { font-size: 12px; color: var(--muted); margin-top: 4px; font-style: normal; }
+
+  /* GRID */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 620px) { .grid-2 { grid-template-columns: 1fr; } .grid-3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 420px) { .grid-3 { grid-template-columns: 1fr; } }
+
+  /* CHECKLIST 20 */
+  .checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 560px) { .checklist-grid { grid-template-columns: 1fr; } }
+
+  .check-item { display: flex; align-items: flex-start; gap: 10px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; }
+  .check-item.critical { border-color: #fca5a5; background: #fff5f5; }
+  .check-num { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 800; flex-shrink: 0; color: #fff; background: var(--blue); }
+  .check-item.critical .check-num { background: var(--red); }
+  .check-item.star .check-num { background: var(--gold); }
+  .check-body { flex: 1; }
+  .check-body .cn { font-size: 13px; font-weight: 700; color: var(--navy); }
+  .check-body .cd { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+  .check-badge { display: inline-block; font-size: 10px; font-weight: 700; border-radius: 4px; padding: 2px 6px; margin-left: 5px; vertical-align: middle; }
+  .check-badge.critical { background: #fee2e2; color: var(--red); }
+  .check-badge.star { background: #fef3c7; color: #92400e; }
+
+  /* BUDGET TABLE */
+  .budget-box { background: var(--card); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .budget-header { background: var(--navy); color: #fff; padding: 14px 20px; display: flex; align-items: center; gap: 10px; }
+  .budget-header h4 { font-size: 15px; font-weight: 800; }
+  .budget-row { display: grid; grid-template-columns: 120px 1fr; border-top: 1px solid var(--border); }
+  .budget-label { padding: 14px 16px; font-size: 13px; font-weight: 700; color: var(--navy); background: #f8faff; }
+  .budget-value { padding: 14px 16px; font-size: 13px; color: var(--text); border-left: 1px solid var(--border); }
+  @media (max-width: 480px) { .budget-row { grid-template-columns: 1fr; } .budget-label { border-right: none; } .budget-value { border-left: none; border-top: 1px solid var(--border); } }
+
+  /* WINNER CARDS */
+  .winner-cards { display: flex; gap: 12px; flex-wrap: wrap; }
+  .winner-card { flex: 1 1 140px; background: linear-gradient(135deg, var(--sky2), var(--sky)); border: 1px solid #93c5fd; border-radius: 12px; padding: 14px 16px; text-align: center; }
+  .winner-card .rank { font-size: 22px; margin-bottom: 4px; }
+  .winner-card .name { font-size: 14px; font-weight: 800; color: var(--navy); }
+
+  /* SUMMARY STRATEGY */
+  .strategy-flow { display: flex; flex-direction: column; gap: 0; }
+  .sf-item { display: flex; align-items: flex-start; gap: 14px; padding: 16px 0; border-bottom: 1px dashed var(--border); }
+  .sf-item:last-child { border-bottom: none; }
+  .sf-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; background: var(--sky2); }
+  .sf-body { flex: 1; }
+  .sf-title { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+  .sf-desc { font-size: 13px; color: var(--text); line-height: 1.65; }
+
+  /* SUPPORT BUSINESS */
+  .support-box { background: linear-gradient(135deg, #0a1628, #1e1b4b); color: #fff; border-radius: 14px; padding: 24px; }
+  .support-box h3 { font-size: 17px; font-weight: 800; margin-bottom: 4px; }
+  .support-box .sb-sub { font-size: 13px; opacity: 0.7; margin-bottom: 18px; }
+  .support-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .support-info-grid { grid-template-columns: 1fr; } }
+  .support-info-item { background: rgba(255,255,255,0.1); border-radius: 10px; padding: 12px 14px; }
+  .support-info-item .si-label { font-size: 11px; opacity: 0.6; margin-bottom: 4px; }
+  .support-info-item .si-value { font-size: 15px; font-weight: 800; color: #fde68a; }
+
+  /* SEOA HUB CONNECT */
+  .hub-connect { background: linear-gradient(135deg, #f5f3ff, #ede9fe); border: 1px solid #c4b5fd; border-radius: 14px; padding: 24px; }
+  .hub-connect h3 { font-size: 16px; font-weight: 800; color: var(--purple); margin-bottom: 6px; }
+  .hub-connect .hc-sub { font-size: 13px; color: #6d28d9; margin-bottom: 16px; }
+  .hub-module-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  @media (max-width: 480px) { .hub-module-grid { grid-template-columns: 1fr; } }
+  .hub-module { background: #fff; border: 1px solid #ddd6fe; border-radius: 10px; padding: 12px 14px; }
+  .hub-module .hm-id { font-size: 11px; font-weight: 800; color: var(--purple); margin-bottom: 3px; }
+  .hub-module .hm-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+  .hub-module .hm-desc { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.5; }
+  .hub-module .hm-fit { display: inline-block; margin-top: 6px; font-size: 11px; background: #ede9fe; color: #6d28d9; border-radius: 6px; padding: 2px 8px; font-weight: 600; }
+
+  /* TAGS */
+  .tag { display: inline-block; border-radius: 999px; padding: 3px 11px; font-size: 12px; font-weight: 600; background: var(--sky2); color: var(--blue); margin: 2px 3px 2px 0; }
+  .tag.green { background: #d1fae5; color: var(--green); }
+  .tag.gold { background: #fef3c7; color: #92400e; }
+  .tag.red { background: #fee2e2; color: var(--red); }
+  .tag.purple { background: #ede9fe; color: var(--purple); }
+
+  /* FOOTER */
+  footer { background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 28px 16px; font-size: 12px; }
+  footer .footer-title { font-size: 14px; color: rgba(255,255,255,0.8); font-weight: 700; margin-bottom: 6px; }
+  footer .footer-note { font-size: 11px; margin-top: 8px; color: rgba(255,255,255,0.35); }
+
+  /* PRINT TAG */
+  .print-only { font-size: 13px; color: var(--muted); margin-bottom: 20px; }
+
+  /* ARROW */
+  .arrow-row { display: flex; align-items: center; justify-content: center; gap: 6px; margin: 10px 0; }
+  .arrow-row .arrow-box { background: var(--navy); color: #fff; border-radius: 8px; padding: 6px 14px; font-size: 13px; font-weight: 700; }
+  .arrow-row .arrow-icon { color: var(--muted); font-size: 18px; }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html">📚 전체</a>
+  <span class="nav-sep">›</span>
+  <a href="dowongyeolui-week1-lecture-summary.html">1강</a>
+  <a href="dowongyeolui-week2-lecture-summary.html">2강</a>
+  <a href="dowongyeolui-week3-lecture-summary.html">3강</a>
+  <a href="dowongyeolui-week4-lecture-summary.html" class="active">4강 (완강)</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">🏁 도원결의 4강 · 최종</div>
+  <h1>합격 20가지 체크리스트<br><span>& 최종 제출 전략</span></h1>
+  <div class="sub">요약 파트 작성법 · 예산 활용 실전 · 합격 요소 20가지<br>오늘이 무상지원금 과정의 마지막 수업입니다</div>
+  <div class="final-badge">🎉 4강 완강 — 도원결의 전 커리큘럼 완료</div>
+</div>
+
+<div class="container">
+
+  <!-- 우수 수강생 -->
+  <div class="section">
+    <div class="section-label">이번 기수 우수 수강생</div>
+    <div class="section-title">🏅 5인 선발</div>
+    <div class="winner-cards">
+      <div class="winner-card"><div class="rank">🥇</div><div class="name">박랑주</div></div>
+      <div class="winner-card"><div class="rank">🥈</div><div class="name">황서연</div></div>
+      <div class="winner-card"><div class="rank">🥉</div><div class="name">김경주</div></div>
+      <div class="winner-card"><div class="rank">✨</div><div class="name">박시아</div></div>
+      <div class="winner-card"><div class="rank">✨</div><div class="name">윤대석</div></div>
+    </div>
+    <div style="margin-top:12px;">
+      <div class="highlight-box blue">
+        <h4>📌 도원결의 이후</h4>
+        <p>무상지원금 과정은 4강으로 종료되지만, <strong>도원결의 월간 세미나</strong>는 계속 진행됩니다. 이번에 배운 내용을 실전에 적용하며 지속적으로 성장하는 커뮤니티입니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 요약 파트 작성법 -->
+  <div class="section">
+    <div class="section-label">사업계획서 핵심 기술</div>
+    <div class="section-title">📄 요약 파트 — "예고편"처럼 써라</div>
+
+    <div class="quote">
+      <p>"요약은 예고편이다. 평가위원이 본편(본문)을 읽고 싶게 만드는 것이 목적."</p>
+      <div class="quote-sub">— 강사님</div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:16px;">
+      <div class="highlight-box red">
+        <h4>❌ 이렇게 쓰면 탈락</h4>
+        <ul>
+          <li>예쁘게 압축된 문장</li>
+          <li>핵심어만 나열한 단어 요약</li>
+          <li>불릿 포인트 나열식</li>
+          <li>AI가 만든 그대로 복붙</li>
+        </ul>
+      </div>
+      <div class="highlight-box green">
+        <h4>✅ 합격하는 요약</h4>
+        <ul>
+          <li>이해되는 <strong>문장체</strong></li>
+          <li>읽으면 바로 이해되는 서술</li>
+          <li>스토리텔링 흐름</li>
+          <li>AI로 "설득력 있게 다시 써줘"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📝 요약 파트 최적 구성</div>
+      <div class="strategy-flow">
+        <div class="sf-item">
+          <div class="sf-icon">①</div>
+          <div class="sf-body">
+            <div class="sf-title">개요 — 아이템명 + 200자 설명</div>
+            <div class="sf-desc">한 줄로 무슨 사업인지 정확히. "OO 문제를 OO 방식으로 해결하는 OO"</div>
+          </div>
+        </div>
+        <div class="sf-item">
+          <div class="sf-icon">P</div>
+          <div class="sf-body">
+            <div class="sf-title">Problem — 문장으로, 이해되게</div>
+            <div class="sf-desc">불릿 X. 읽으면서 "맞아, 이게 문제지"가 자연스럽게 나오는 서술체</div>
+          </div>
+        </div>
+        <div class="sf-item">
+          <div class="sf-icon">S</div>
+          <div class="sf-body">
+            <div class="sf-title">Solution — P와 1:1로 매칭</div>
+            <div class="sf-desc">문제와 해결이 정확히 대응되는지 확인. 평가위원은 P→S 연결을 가장 먼저 본다</div>
+          </div>
+        </div>
+        <div class="sf-item">
+          <div class="sf-icon">S+</div>
+          <div class="sf-body">
+            <div class="sf-title">Scale Up — 시장 크기 + 왜 지금</div>
+            <div class="sf-desc">TAM 조 단위 + 지금이 타이밍인 이유 (트렌드/규제/기술 변화)</div>
+          </div>
+        </div>
+        <div class="sf-item">
+          <div class="sf-icon">T</div>
+          <div class="sf-body">
+            <div class="sf-title">Team — 대표자 간절함 + 전문성</div>
+            <div class="sf-desc">왜 내가 이 사업을 해야 하는지. 경험·실증 사례 + 파트너 역량</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="highlight-box gold">
+      <h4>💡 평가위원 특성 맞춤 전략</h4>
+      <ul>
+        <li>평가위원 평균 연령 <strong>60대</strong> → 쉽고 읽기 편한 문장체 선호</li>
+        <li>한 명당 수십 개 서류 검토 → 읽는 데 3~5분도 안 씀</li>
+        <li><strong>"이해되면 내 편"</strong> — 이해 못 하면 탈락</li>
+        <li>AI 활용: "이 내용을 설득력 있고 공감되게 다시 써줘"로 가다듬기</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box blue">
+      <h4>📏 분량 기준</h4>
+      <ul>
+        <li>요약 파트 최적: <strong>2페이지</strong></li>
+        <li>전체 사업계획서: 15페이지 제한 무시 가능, <strong>20~30페이지 권장</strong></li>
+        <li>추가 첨부 서류 제한 없으면 → <strong>모두 다 첨부</strong> (증빙 자료 많을수록 유리)</li>
+        <li>사업계획서는 "쓰는 것"이 아니라 <strong>"만드는 것"</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 합격 20가지 -->
+  <div class="section">
+    <div class="section-label">최종 제출 전 체크</div>
+    <div class="section-title">☑️ 합격 20가지 요소</div>
+
+    <div class="highlight-box red" style="margin-bottom:20px;">
+      <h4>⚠️ 탈락 사유 99% — 차별화 불명확</h4>
+      <p>경쟁사 대비 내 아이템이 <strong>왜 다른지</strong>가 명확하지 않으면 거의 탈락. 가장 먼저, 가장 철저히 준비할 것.</p>
+    </div>
+
+    <div class="checklist-grid">
+      <div class="check-item critical">
+        <div class="check-num">1</div>
+        <div class="check-body">
+          <div class="cn">Problem-Solution Fit <span class="check-badge critical">필수</span></div>
+          <div class="cd">P와 S가 1:1 정확 매칭. 어긋나면 즉시 탈락</div>
+        </div>
+      </div>
+      <div class="check-item star">
+        <div class="check-num">2</div>
+        <div class="check-body">
+          <div class="cn">수요 검증 <span class="check-badge star">강추</span></div>
+          <div class="cd">설문 / 시판매 / 구매 계약서 / 경쟁사 판매량 증거</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">3</div>
+        <div class="check-body">
+          <div class="cn">비즈니스 모델 도식화</div>
+          <div class="cd">돈이 어떻게 흐르는지 한눈에 보이는 그림</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">4</div>
+        <div class="check-body">
+          <div class="cn">MVP / 웹사이트 / 앱</div>
+          <div class="cd">Lovable 등으로 만든 실제 동작하는 프로토타입</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">5</div>
+        <div class="check-body">
+          <div class="cn">인포그래픽 / 흐름도</div>
+          <div class="cd">서비스 흐름을 시각화. 없으면 불리</div>
+        </div>
+      </div>
+      <div class="check-item star">
+        <div class="check-num">6</div>
+        <div class="check-body">
+          <div class="cn">계약서 / MOU <span class="check-badge star">강추</span></div>
+          <div class="cd">구매 계약, 총판 계약, 업무협약서 등 실거래 증거</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">7</div>
+        <div class="check-body">
+          <div class="cn">대기업 오픈이노베이션 / MOU</div>
+          <div class="cd">대기업과의 협력 관계는 신뢰도 대폭 상승</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">8</div>
+        <div class="check-body">
+          <div class="cn">SNS 채널 / 유튜브 실적</div>
+          <div class="cd">구독자 수, 조회수, 인플루언서 연계 증거</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">9</div>
+        <div class="check-body">
+          <div class="cn">공장 / 사무실 / 샵 사진</div>
+          <div class="cd">실사 사진 첨부. 실체 있는 사업임을 증명</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">10</div>
+        <div class="check-body">
+          <div class="cn">OEM/ODM 공장 사진</div>
+          <div class="cd">제조 기반 아이템이면 공장 현장 사진 필수</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">11</div>
+        <div class="check-body">
+          <div class="cn">온라인 쇼핑몰 / 홈페이지</div>
+          <div class="cd">실제 운영 중인 채널이면 링크 + 스크린샷 첨부</div>
+        </div>
+      </div>
+      <div class="check-item critical">
+        <div class="check-num">12</div>
+        <div class="check-body">
+          <div class="cn">경쟁사 차별화 <span class="check-badge critical">99% 탈락</span></div>
+          <div class="cd">왜 우리가 다른지 명확히. 모호하면 탈락</div>
+        </div>
+      </div>
+      <div class="check-item star">
+        <div class="check-num">13</div>
+        <div class="check-body">
+          <div class="cn">시장 규모 (조 단위) <span class="check-badge star">강추</span></div>
+          <div class="cd">TAM 최소 수천억~수조 원. 너무 작으면 감점</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">14</div>
+        <div class="check-body">
+          <div class="cn">연도별 사업화 전략</div>
+          <div class="cd">1년차~5년차 각각 무엇을 할지 로드맵</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">15</div>
+        <div class="check-body">
+          <div class="cn">수익 모델 (구독만 X)</div>
+          <div class="cd">B2B / B2C / 플랫폼 / 구독 등 여러 수익 경로</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">16</div>
+        <div class="check-body">
+          <div class="cn">매출 계획 (3~5개년)</div>
+          <div class="cd">5년차 목표 100억~500억 수준. 근거 함께</div>
+        </div>
+      </div>
+      <div class="check-item star">
+        <div class="check-num">17</div>
+        <div class="check-body">
+          <div class="cn">대표자 간절함 어필 <span class="check-badge star">강추</span></div>
+          <div class="cd">왜 내가, 왜 지금, 왜 이 사업인지. 감정 전달</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">18</div>
+        <div class="check-body">
+          <div class="cn">전문가 냄새 (분야별)</div>
+          <div class="cd">이 분야에 대한 깊이 있는 이해 + 관련 경력</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">19</div>
+        <div class="check-body">
+          <div class="cn">아이템명 (짧고 매력적)</div>
+          <div class="cd">기억에 남는 한 줄 이름. 과제명 공식 활용</div>
+        </div>
+      </div>
+      <div class="check-item">
+        <div class="check-num">20</div>
+        <div class="check-body">
+          <div class="cn">산출물 목표 명확화</div>
+          <div class="cd">합격용과 실행용 구분. 목표에 맞게 작성</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 예산 활용 실전 -->
+  <div class="section">
+    <div class="section-label">실전 운영</div>
+    <div class="section-title">💰 예산 활용 완전 정복</div>
+
+    <div class="budget-box" style="margin-bottom:16px;">
+      <div class="budget-header">
+        <span>💵</span>
+        <h4>자부담 구성 — 현금 + 현물로 채워라</h4>
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">현금 자부담</div>
+        <div class="budget-value">사업비의 <strong>10%</strong>. 실제 내 돈이 들어가는 부분</div>
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">현물 자부담</div>
+        <div class="budget-value"><strong>대표자 인건비</strong>로 충당 가능 (약 20%). 내 노동이 곧 현물</div>
+      </div>
+      <div class="budget-row">
+        <div class="budget-label">사업비 활용</div>
+        <div class="budget-value">인건비 + 광고비 + 개발비(데이터·재료·솔루션) <strong>3개 항목으로 크게</strong></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="highlight-box green">
+        <h4>✅ 쓸 수 있는 것</h4>
+        <ul>
+          <li>인건비 (직원, 외주)</li>
+          <li>광고비 (SNS, 검색)</li>
+          <li>개발비 / 데이터 구매비</li>
+          <li>재료비 / 소모품</li>
+          <li>3개 큰 계산서로 통 크게 끊기</li>
+        </ul>
+      </div>
+      <div class="highlight-box red">
+        <h4>❌ 주의할 것</h4>
+        <ul>
+          <li>가족 인건비 — <strong>불가</strong></li>
+          <li>임대료 — 쓰면 실사 나올 수 있음</li>
+          <li>비용 늑장 집행 — <strong>불이익</strong></li>
+          <li>영수증 없는 지출</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote">
+      <p>"돈을 빨리 쓰는 게 능력이다. 집행 속도가 곧 실행력을 보여주는 지표."</p>
+      <div class="quote-sub">— 강사님, 예산 집행 원칙</div>
+    </div>
+
+    <div class="highlight-box gold">
+      <h4>💡 소상공인 확인서 필수 서류</h4>
+      <p>일부 사업은 지원 요건에 <strong>소상공인 확인서</strong>가 필요합니다. 사업자등록 후 중소벤처24(www.smes.go.kr)에서 발급. 사전에 준비해두면 지원 타이밍 놓치지 않습니다.</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 생활문화혁신지원사업 -->
+  <div class="section">
+    <div class="section-label">지금 당장 지원 가능한 사업</div>
+    <div class="section-title">🎯 생활문화혁신지원사업</div>
+
+    <div class="support-box">
+      <h3>생활문화혁신지원사업</h3>
+      <div class="sb-sub">소상공인 대상 · 비교적 낮은 경쟁률 · 즉시 지원 권장</div>
+      <div class="support-info-grid">
+        <div class="support-info-item">
+          <div class="si-label">지원 규모</div>
+          <div class="si-value">최대 1억원 (단독)</div>
+        </div>
+        <div class="support-info-item">
+          <div class="si-label">공동 신청 시</div>
+          <div class="si-value">최대 3억원</div>
+        </div>
+        <div class="support-info-item">
+          <div class="si-label">지원 기업 수</div>
+          <div class="si-value">400개사</div>
+        </div>
+        <div class="support-info-item">
+          <div class="si-label">신청 기간</div>
+          <div class="si-value">5/18 ~ 6/8</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div class="highlight-box blue">
+        <h4>📌 핵심 전략</h4>
+        <ul>
+          <li>소상공인 대상 → 대기업 대비 <strong>경쟁 강도 낮음</strong></li>
+          <li>합격 못 해도 포기 X — <strong>합격할 때까지 계속 지원</strong>하는 게 정답</li>
+          <li>한 번 쓴 계획서 = 다음 지원 시 업그레이드해서 재사용</li>
+          <li>연간 수십 개 사업이 상시 공고 → 3~6개월 단위로 체크</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 서아허브 연결 섹션 -->
+  <div class="section">
+    <div class="section-label">사장님 아이디어 연결</div>
+    <div class="section-title">🔗 서아허브 모듈형식 → 지원사업 아이디어</div>
+
+    <div class="hub-connect">
+      <h3>💡 서아허브 28모듈 플랫폼 = 초기 지원사업 아이템</h3>
+      <div class="hc-sub">실제 매장 운영(도미다리)에서 검증된 문제를 해결하는 모듈형 SaaS — 지원사업 평가 기준에 잘 맞습니다</div>
+
+      <div class="hub-module-grid">
+        <div class="hub-module">
+          <div class="hm-id">O-8 · 1순위 MVP</div>
+          <div class="hm-name">AI SOP 매뉴얼 빌더</div>
+          <div class="hm-desc">업종별 운영 절차 자동 생성 + 직원 교육 자동화</div>
+          <div class="hm-fit">소상공인 스마트상점 지원사업 적합</div>
+        </div>
+        <div class="hub-module">
+          <div class="hm-id">R-1 · 2순위 MVP</div>
+          <div class="hm-name">Smart KDS 체크리스트</div>
+          <div class="hm-desc">주방-홀 연동 · 음식 제공 순서 디지털화</div>
+          <div class="hm-fit">O-8 SOP 시스템의 한 모듈로 통합 가능</div>
+        </div>
+        <div class="hub-module">
+          <div class="hm-id">핵심 차별화</div>
+          <div class="hm-name">실증 매장 기반 데이터</div>
+          <div class="hm-desc">도미다리 현장 운영 경험 = 경쟁자들과 다른 본질적 차별화</div>
+          <div class="hm-fit">이론형 컨설팅 X · 현장 실증 O</div>
+        </div>
+        <div class="hub-module">
+          <div class="hm-id">Problem</div>
+          <div class="hm-name">자영업자 운영 리스크</div>
+          <div class="hm-desc">초보 사장님 운영 어려움 · 직원 숙련도 차이 · 사람 리스크</div>
+          <div class="hm-fit">대한민국 300만+ 소상공인 공통 문제</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;">
+      <div class="highlight-box purple">
+        <h4>🎯 지원사업 관점에서 강점 분석</h4>
+        <ul>
+          <li><strong>Problem 명확</strong>: 도미다리에서 직접 겪은 문제 → "실제 수요 검증" 자동 충족</li>
+          <li><strong>MVP 바로 가능</strong>: Lovable 등으로 모듈형 웹 시제품 제작 → 체크리스트 4번 충족</li>
+          <li><strong>시장 규모</strong>: 국내 소상공인 320만 명 × 평균 운영비 → 조 단위 TAM 충분</li>
+          <li><strong>팀 스토리</strong>: 사장님이 직접 운영하는 매장에서 검증 → 간절함 + 전문성 동시 충족</li>
+          <li><strong>확장성</strong>: 식당 → 카페 → 편의점 → 모든 소매업으로 모듈 확장 가능</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-box gold">
+      <h4>💡 다음 단계 제안</h4>
+      <ul>
+        <li>서아허브 O-8 SOP 빌더를 지원사업 아이템으로 <strong>사업계획서 초안 작성</strong> 시도</li>
+        <li>PSST 프레임워크 적용: P(자영업 운영 리스크) → S(AI SOP) → S+(소상공인 시장) → T(도미다리 실증)</li>
+        <li>소상공인 스마트상점 지원사업 공고 확인 → 이 아이템으로 바로 지원 가능</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 최종 마무리 메시지 -->
+  <div class="section">
+    <div class="section-label">강사님 마무리 메시지</div>
+    <div class="section-title">🎓 4강을 마치며</div>
+
+    <div class="quote">
+      <p>"사업계획서는 합격할 때까지 쓰는 것이다. 한 번 떨어졌다고 포기하지 마라."</p>
+      <div class="quote-sub">— 강사님, 최종 마무리</div>
+    </div>
+
+    <div class="grid-2">
+      <div class="highlight-box green">
+        <h4>✅ 지금 당장 해야 할 것</h4>
+        <ul>
+          <li>K-STARTUP / 기업마당 즐겨찾기</li>
+          <li>소상공인 확인서 발급</li>
+          <li>Lovable로 MVP 하나 만들기</li>
+          <li>사업계획서 초안 작성 시작</li>
+          <li>수요 검증 자료 모으기</li>
+        </ul>
+      </div>
+      <div class="highlight-box blue">
+        <h4>📚 이번 4강 핵심 요약</h4>
+        <ul>
+          <li>요약 = 예고편 (문장체, 2페이지)</li>
+          <li>합격 20요소 체크리스트 완성</li>
+          <li>자부담 = 현금 10% + 현물 20%</li>
+          <li>돈은 빨리 쓰는 게 능력</li>
+          <li>떨어져도 다시 지원하면 된다</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:16px;">
+      <div class="section-label">전체 PSST 완성</div>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:16px;">
+        <span class="tag">P — 2강 Problem ✓</span>
+        <span class="tag">S — 2강 Solution ✓</span>
+        <span class="tag">S+ — 3강 Scale Up ✓</span>
+        <span class="tag green">T — 4강 Team + 완강 ✓</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-title">도원결의 무상지원금 마스터 — 4강 (완강)</div>
+  <div>Claude 독립 정리본 · 헤르메스 정리본과 비교용</div>
+  <div class="footer-note">강의 원본 내용과 일부 차이가 있을 수 있으니, 중요한 내용은 강의 원본을 함께 참고하세요.</div>
+</footer>
+
+</body>
+</html>
