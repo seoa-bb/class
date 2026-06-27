@@ -1,0 +1,441 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>도원결의 1주차 강의 요점정리 — 지원사업 기초</title><style>
+  :root{--bg:#f3f6fa;--paper:#ffffff;--ink:#1e2d3d;--muted:#5a7184;--line:#d0dce8;--soft:#e8f0f8;--blue:#2563eb;--deep:#1a3a5c;--navy:#1e3a5f;--sky:#3b82f6;--amber:#f59e0b;--green:#059669;--red:#dc2626;--cream:#f8fbff}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;line-height:1.7;word-break:keep-all}
+  .wrap{max-width:1040px;margin:0 auto;padding:46px 22px 80px}
+  .hero{background:linear-gradient(135deg,#1a3a5c 0%,#1e4976 60%,#1e5f8c 100%);border-radius:28px;padding:46px 48px;box-shadow:0 20px 60px rgba(30,61,93,.25);position:relative;overflow:hidden;color:#fff}
+  .hero:before{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,.22),rgba(59,130,246,0) 70%)}
+  .hero:after{content:"";position:absolute;left:-60px;bottom:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(245,158,11,.12),rgba(245,158,11,0) 70%)}
+  .eyebrow{display:inline-flex;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#93c5fd;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:800;margin-bottom:18px;letter-spacing:.05em}
+  .hero h1{font-size:38px;line-height:1.18;letter-spacing:-.04em;margin:0 0 8px;font-weight:850;color:#fff}
+  .hero .sub{font-size:17px;color:#bfdbfe;margin:0 0 4px}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .badge{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#e0f2fe;border-radius:10px;padding:6px 13px;font-size:13.5px;font-weight:700}
+  .badge.green{background:rgba(5,150,105,.25);border-color:rgba(5,150,105,.4);color:#6ee7b7}
+  .badge.amber{background:rgba(245,158,11,.22);border-color:rgba(245,158,11,.35);color:#fcd34d}
+  section{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:30px 34px;margin:20px 0;box-shadow:0 8px 28px rgba(30,61,93,.06)}
+  h2{font-size:23px;letter-spacing:-.03em;margin:0 0 18px;font-weight:820;color:var(--deep);display:flex;align-items:center;gap:10px}
+  h2 .icon{font-size:20px}
+  h3{font-size:17px;margin:20px 0 8px;color:var(--navy);font-weight:760}
+  h4{font-size:15px;margin:14px 0 6px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+  table{width:100%;border-collapse:collapse;margin:10px 0;background:var(--cream);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line);font-size:15px}
+  th{background:var(--soft);color:var(--navy);font-weight:820;font-size:14px}
+  tr:last-child td{border-bottom:0}
+  td strong{color:var(--deep)}
+  ul{margin:8px 0 4px 18px;padding:0}li{margin:6px 0}
+  ol{margin:8px 0 4px 18px;padding:0}
+  .key{background:#eff6ff;border:1.5px solid #bfdbfe;border-radius:10px;padding:14px 18px;margin:12px 0;color:#1e40af;font-weight:700;font-size:15.5px}
+  .key .label{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#60a5fa;margin-bottom:4px}
+  .note{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:14px;padding:14px 18px;margin:12px 0;font-size:15px}
+  .note b{color:#065f46}
+  .warn{background:#fffbeb;border:1px solid #fde68a;border-radius:14px;padding:14px 18px;margin:12px 0;font-size:15px}
+  .warn b{color:#92400e}
+  .danger{background:#fef2f2;border:1px solid #fecaca;border-radius:14px;padding:14px 18px;margin:12px 0;font-size:15px}
+  .danger b{color:#991b1b}
+  .step-box{display:flex;flex-direction:column;gap:0;margin:14px 0}
+  .step{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .step:last-child{border-bottom:0}
+  .step-num{min-width:32px;height:32px;background:var(--blue);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;margin-top:2px}
+  .step-content strong{display:block;font-size:15.5px;color:var(--deep);margin-bottom:3px}
+  .step-content span{font-size:14.5px;color:var(--muted)}
+  .formula{background:#1e3a5c;color:#e0f2fe;border-radius:16px;padding:20px 24px;margin:14px 0;font-size:16px;font-weight:700;text-align:center;line-height:1.6}
+  .formula .plus{color:#93c5fd;margin:0 8px}
+  .task-card{background:var(--soft);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin:10px 0}
+  .task-card .task-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+  .task-card ul{margin:4px 0 0 16px}
+  .task-card li{font-size:15px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+  .col-card{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .col-card .title{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+  .col-card ul{margin:0 0 0 14px;padding:0}
+  .col-card li{font-size:14.5px;margin:4px 0}
+  .tag{display:inline-block;background:#dbeafe;color:#1e40af;border-radius:6px;padding:2px 8px;font-size:12px;font-weight:700;margin:2px}
+  .tag.green{background:#d1fae5;color:#065f46}
+  .tag.amber{background:#fef3c7;color:#92400e}
+  .tag.red{background:#fee2e2;color:#991b1b}
+  .muted{color:var(--muted)}
+  .summary-box{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #bfdbfe;border-radius:18px;padding:22px 26px;margin:14px 0}
+  .summary-box .num{font-size:28px;font-weight:900;color:var(--blue);margin-bottom:4px}
+  .summary-box .desc{font-size:15px;color:var(--navy)}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0}
+  .mini-card{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:center}
+  .mini-card .mc-title{font-size:13px;font-weight:800;color:var(--muted);margin-bottom:6px}
+  .mini-card .mc-val{font-size:15px;font-weight:800;color:var(--deep)}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:28px;border-top:1px solid var(--line);padding-top:20px}
+  @media(max-width:600px){.hero{padding:28px 24px}.hero h1{font-size:28px}.two-col,.grid-3{grid-template-columns:1fr}h2{font-size:20px}section{padding:22px 18px}}
+  @media print{body{background:#fff}.wrap{max-width:none;padding:0}.hero{background:#1a3a5c !important;-webkit-print-color-adjust:exact}.hero,section{box-shadow:none;break-inside:avoid}}
+</style></head><body><main class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="eyebrow">도원결의 · 1주차 · 지원사업 기초</div>
+    <h1>지원사업, 어떻게 접근할까?</h1>
+    <p class="sub">창업 자격 구분 · 플랫폼 가입 · 아이디어 발굴법 완전 정리</p>
+    <p class="sub" style="color:#93c5fd;font-size:14px;margin-top:4px">목요일 저녁 8~11시 · 4주 과정</p>
+    <div class="badges">
+      <span class="badge">K-STARTUP</span>
+      <span class="badge">특허로</span>
+      <span class="badge green">예비·초기·창업기업 구분</span>
+      <span class="badge amber">아이디어 발굴 3단계</span>
+      <span class="badge">과제명 만들기</span>
+    </div>
+  </div>
+
+  <!-- 한 줄 요약 -->
+  <section>
+    <h2><span class="icon">💡</span>핵심 한 줄 요약</h2>
+    <div class="key">
+      <div class="label">오늘 강의 핵심</div>
+      내 창업 자격 확인 → 두 플랫폼(K-STARTUP, 특허로) 가입 → 경쟁사 분석으로 아이디어 발굴 → 과제명 완성
+    </div>
+  </section>
+
+  <!-- 강의 안내 / OT -->
+  <section>
+    <h2><span class="icon">📋</span>강의 안내 (OT)</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <div class="title">강의 일정</div>
+        <ul>
+          <li><strong>총 4주</strong> — 목요일 저녁 8~11시</li>
+          <li>1주차: 지원사업 기초 + 자격 구분</li>
+          <li>2~4주차: 심화 진행</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="title">주요 플랫폼</div>
+        <ul>
+          <li><strong>자료실</strong> — 구글 드라이브 공유</li>
+          <li><strong>과제 제출</strong> — 피치스파트너스 게시판</li>
+          <li>피치스파트너스 앱 설치 권장</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>피치스파트너스(Pitches Partners)</b> — 강의 자료 업로드, 과제 제출, 공지 확인이 이루어지는 메인 플랫폼. 앱 설치 후 강사 계정 팔로우 권장.</div>
+  </section>
+
+  <!-- 창업 자격 3단계 구분 -->
+  <section>
+    <h2><span class="icon">🏷️</span>창업 자격 3단계 구분 — 가장 중요!</h2>
+    <div class="danger"><b>핵심 원칙:</b> 내 사업자등록증 개수와 날짜를 먼저 확인해야 지원 가능한 사업이 결정된다.</div>
+    <table>
+      <thead><tr><th>구분</th><th>기준</th><th>핵심 조건</th><th>특이사항</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>예비창업자</strong></td>
+          <td>창업 전 단계</td>
+          <td>사업자 등록 <span style="color:var(--red);font-weight:800">0개</span></td>
+          <td>창업기업확인서 발급 불가</td>
+        </tr>
+        <tr>
+          <td><strong>초기창업자</strong></td>
+          <td>창업 후 <strong>3년 이내</strong></td>
+          <td>가장 오래된 사업자 기준</td>
+          <td>창업기업확인서 발급 가능</td>
+        </tr>
+        <tr>
+          <td><strong>창업기업</strong></td>
+          <td>창업 후 <strong>7년 이내</strong></td>
+          <td>가장 오래된 사업자 기준</td>
+          <td>중소기업확인서 필요할 수도</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="warn"><b>주의:</b> 사업자가 여러 개 있을 경우, <strong>제일 오래된 사업자등록증 날짜</strong>를 기준으로 연도를 계산한다. "폐업한 사업자"도 포함되는 경우가 많으니 반드시 확인.</div>
+
+    <h3>창업기업확인서 vs 중소기업확인서</h3>
+    <table>
+      <thead><tr><th>서류</th><th>발급처</th><th>대상</th><th>용도</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>창업기업확인서</strong></td>
+          <td>K-STARTUP</td>
+          <td>초기창업자·창업기업</td>
+          <td>창업지원사업 지원 시 제출</td>
+        </tr>
+        <tr>
+          <td><strong>중소기업확인서</strong></td>
+          <td>중소벤처기업부</td>
+          <td>중소기업</td>
+          <td>일반 기업지원 사업 제출</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="note"><b>예비창업자는 창업기업확인서 발급이 불가!</b> 예비창업자 대상 사업은 별도로 분리되어 있어 예비 전용 공고를 찾아야 한다.</div>
+  </section>
+
+  <!-- K-STARTUP 가입 -->
+  <section>
+    <h2><span class="icon">🌐</span>K-STARTUP 가입 방법</h2>
+    <div class="key">
+      <div class="label">사이트</div>
+      k-startup.go.kr (창업지원포털)
+    </div>
+    <div class="step-box">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>회원가입 — "개인 회원"으로 가입</strong>
+          <span>기업 회원이 아닌 <b>개인</b> 으로 가입해야 함. 대표자 개인 명의로 가입.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>기업정보 등록 (사업자 있는 경우)</strong>
+          <span>마이페이지 → 기업정보 등록. 사업자번호, 법인/개인 구분, 대표자명 입력.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>창업기업확인서 발급 (해당자만)</strong>
+          <span>기업정보 등록 완료 후 → 창업기업확인서 신청. 예비창업자는 이 단계 불가.</span>
+        </div>
+      </div>
+    </div>
+    <div class="note"><b>K-STARTUP에서 할 수 있는 것:</b> 지원사업 공고 검색 · 창업기업확인서 발급 · 사업계획서 제출 · 지원사업 현황 관리</div>
+  </section>
+
+  <!-- 특허로 가입 -->
+  <section>
+    <h2><span class="icon">⚖️</span>특허로 가입 방법</h2>
+    <div class="key">
+      <div class="label">사이트</div>
+      patentpro.or.kr (특허청 특허 출원·관리 시스템)
+    </div>
+    <div class="step-box">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>"자연인(개인)"으로 가입</strong>
+          <span>법인이 아닌 자연인(개인) 회원으로 가입. 법인도 별도로 등록 가능하지만, 개인 명의로 먼저.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>공동인증서(구 공인인증서) 등록</strong>
+          <span>특허 출원은 본인 확인이 필수 → 공동인증서 연동까지 완료해야 실제 사용 가능.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>완료 확인</strong>
+          <span>로그인 후 특허 검색·출원 기능 진입 가능 여부로 확인.</span>
+        </div>
+      </div>
+    </div>
+    <div class="warn"><b>공동인증서 등록까지 완료해야</b> 1주차 과제 완성으로 인정. 가입만 하고 인증서 미등록 상태로 제출하지 말 것.</div>
+    <div class="note"><b>특허로를 쓰는 이유:</b> 지원사업에서 지식재산권(특허·실용신안·상표) 출원 여부를 확인하거나, 직접 출원해야 하는 경우가 많음. 미리 준비해두면 유리.</div>
+  </section>
+
+  <!-- 아이디어 발굴 방법론 -->
+  <section>
+    <h2><span class="icon">💡</span>아이디어 발굴 — 경쟁사 역추적법</h2>
+    <div class="key">
+      <div class="label">핵심 원칙</div>
+      "내가 뭘 잘하나?" X → "기존 서비스의 한계가 뭔가?" O
+    </div>
+
+    <div class="formula">
+      경쟁사 찾기 <span class="plus">→</span> 한계·문제점 발견 <span class="plus">→</span> 차별화 포인트 설정
+    </div>
+
+    <div class="step-box">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <strong>경쟁사 찾기</strong>
+          <span>내가 하려는 아이디어와 비슷한 기존 서비스·제품·업체를 찾는다. 완전히 같지 않아도 OK — "비슷한 문제를 푸는 곳"이면 경쟁사.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <strong>경쟁사의 한계·문제점 분석</strong>
+          <span>리뷰, SNS, 직접 사용 등으로 "이 서비스가 해결 못 하는 것"을 찾는다. 고객이 불평하는 부분 = 내 기회.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <strong>차별화 포인트 = 나의 아이템</strong>
+          <span>경쟁사가 못 푸는 문제를 내가 해결하는 방법 = 아이디어. 기술·타깃·유통·가격·경험 중 어디서 차별화할지 정한다.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="note">
+      <b>강사 팁:</b> 아이디어가 없다면 "내가 쓰다가 불편했던 서비스"에서 시작하라. 직접 겪은 불편함이 가장 확실한 시장 검증이다. 주변 사람들이 같은 불편함을 느끼는지 확인하면 더욱 좋다.
+    </div>
+  </section>
+
+  <!-- 과제명 만들기 -->
+  <section>
+    <h2><span class="icon">✍️</span>과제명(프로젝트 명) 만들기</h2>
+    <div class="formula">
+      "<span style="color:#93c5fd">누구누구</span>를 위한 <span class="plus">+</span> <span style="color:#6ee7b7">어떤 기술/방법</span>을 통한 <span class="plus">+</span> <span style="color:#fcd34d">무슨 서비스</span>"
+    </div>
+
+    <h3>각 요소 설명</h3>
+    <table>
+      <thead><tr><th>요소</th><th>내용</th><th>예시</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>누구누구를 위한</strong></td>
+          <td>타깃 고객 (페르소나)</td>
+          <td>1인 자영업자, 시니어, 육아맘, 소상공인…</td>
+        </tr>
+        <tr>
+          <td><strong>어떤 기술/방법을 통한</strong></td>
+          <td>차별화 수단</td>
+          <td>AI 분석, 구독 모델, 오프라인 연계, 실시간 데이터…</td>
+        </tr>
+        <tr>
+          <td><strong>무슨 서비스</strong></td>
+          <td>제공 가치</td>
+          <td>매출 예측 서비스, 건강 관리 플랫폼, 배송 최적화…</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="two-col">
+      <div class="col-card">
+        <div class="title">과제명 예시 ✅</div>
+        <ul>
+          <li>"소상공인을 위한 AI 기반 매출 예측 서비스"</li>
+          <li>"시니어를 위한 음성인식을 통한 건강 기록 앱"</li>
+          <li>"1인 크리에이터를 위한 구독 기반 콘텐츠 수익화 플랫폼"</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="title">피해야 할 과제명 ❌</div>
+        <ul>
+          <li>"AI 플랫폼" (너무 포괄적)</li>
+          <li>"혁신적인 앱" (차별점 없음)</li>
+          <li>"더 좋은 서비스" (구체성 없음)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note"><b>심사자 관점:</b> 과제명만 봐도 "누구에게, 뭘, 어떻게" 전달이 돼야 한다. 심사자는 수백 개 과제명을 보므로 첫 줄에서 이해 안 되면 감점.</div>
+  </section>
+
+  <!-- PSST 사업계획서 -->
+  <section>
+    <h2><span class="icon">📄</span>PSST 사업계획서 양식 (소개)</h2>
+    <div class="note"><b>PSST란?</b> 정부 창업지원사업에서 많이 쓰이는 사업계획서 표준 양식. 아래 4개 섹션으로 구성.</div>
+    <div class="grid-3" style="grid-template-columns:repeat(4,1fr)">
+      <div class="mini-card">
+        <div class="mc-title">P</div>
+        <div class="mc-val">Problem<br><span style="font-size:13px;color:var(--muted)">문제 정의</span></div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-title">S</div>
+        <div class="mc-val">Solution<br><span style="font-size:13px;color:var(--muted)">해결책</span></div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-title">S</div>
+        <div class="mc-val">Scale<br><span style="font-size:13px;color:var(--muted)">시장 규모</span></div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-title">T</div>
+        <div class="mc-val">Team<br><span style="font-size:13px;color:var(--muted)">팀 구성</span></div>
+      </div>
+    </div>
+    <div class="warn"><b>1주차에서는 소개 수준!</b> PSST 작성법은 2~3주차에 집중적으로 다룰 예정. 지금은 "이런 구조가 있다"는 것만 파악.</div>
+  </section>
+
+  <!-- 지원사업 찾는 법 -->
+  <section>
+    <h2><span class="icon">🔍</span>지원사업 찾는 법</h2>
+    <h3>주요 탐색 경로</h3>
+    <div class="two-col">
+      <div class="col-card">
+        <div class="title">온라인 플랫폼</div>
+        <ul>
+          <li><strong>K-STARTUP</strong> (k-startup.go.kr) — 중앙부처·지자체 창업지원사업 통합</li>
+          <li><strong>중소기업통합공시시스템</strong> — 중소기업 대상</li>
+          <li><strong>창업진흥원 SNS</strong> — 신규 공고 빠른 확인</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="title">지원사업 선택 기준</div>
+        <ul>
+          <li>내 창업 자격 (예비/초기/창업기업) 매칭 여부</li>
+          <li>지원 금액 vs 요구 사항 비율</li>
+          <li>선정 기준 (기술성? 사업성? 팀?)</li>
+          <li>지역 제한 여부</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>강사 팁:</b> 처음엔 "지원금이 큰 것"보다 "통과율이 높은 소규모 사업"부터 도전해 합격 경험 쌓기. 합격 이력이 쌓이면 큰 사업 도전 시 유리.</div>
+  </section>
+
+  <!-- 1주차 과제 -->
+  <section>
+    <h2><span class="icon">📌</span>1주차 과제</h2>
+    <div class="warn"><b>제출 마감:</b> 피치스파트너스 게시판에 제출 (강사 안내 날짜 기준)</div>
+
+    <div class="task-card">
+      <div class="task-title">✅ 과제 1 — K-STARTUP 가입 완료</div>
+      <ul>
+        <li>k-startup.go.kr 에서 <strong>개인 회원</strong>으로 가입</li>
+        <li>사업자 있는 경우 기업정보 등록까지</li>
+        <li>가입 완료 화면 캡처해서 제출</li>
+      </ul>
+    </div>
+
+    <div class="task-card">
+      <div class="task-title">✅ 과제 2 — 특허로 가입 완료</div>
+      <ul>
+        <li>patentpro.or.kr 에서 <strong>자연인(개인)</strong>으로 가입</li>
+        <li><strong>공동인증서 등록까지</strong> 완료 (이 부분까지 해야 완성)</li>
+        <li>가입 및 인증서 등록 완료 화면 캡처</li>
+      </ul>
+    </div>
+
+    <div class="task-card">
+      <div class="task-title">✅ 과제 3 — 과제명 제출</div>
+      <ul>
+        <li>위 공식 적용: "누구를 위한 + 기술/방법 + 서비스"</li>
+        <li>내 아이디어 기반으로 과제명 1개 작성</li>
+        <li>피치스파트너스 게시판에 텍스트로 제출</li>
+      </ul>
+    </div>
+
+    <div class="danger"><b>주의:</b> K-STARTUP·특허로 가입은 각자 직접 해야 함. 사업자등록 상황(예비/초기)에 따라 화면이 다르게 보일 수 있으니 막히면 강사에게 질문.</div>
+  </section>
+
+  <!-- 강의 총정리 -->
+  <section>
+    <h2><span class="icon">🗂️</span>1주차 핵심 정리</h2>
+    <div class="two-col">
+      <div class="col-card">
+        <div class="title">오늘 배운 것</div>
+        <ul>
+          <li>예비·초기·창업기업 구분법</li>
+          <li>창업기업확인서 vs 중소기업확인서</li>
+          <li>K-STARTUP 가입 (개인 회원)</li>
+          <li>특허로 가입 (자연인 + 공동인증서)</li>
+          <li>경쟁사 역추적 아이디어 발굴법</li>
+          <li>과제명 공식</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <div class="title">2주차 예고</div>
+        <ul>
+          <li>PSST 사업계획서 작성법 심화</li>
+          <li>Problem(문제 정의) 섹션 실습</li>
+          <li>지원사업 공고 분석 방법</li>
+          <li>과제명 → 사업계획서 확장</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>도원결의 1주차 강의 요점정리 · 2026. 6.</footer>
+</main></body></html>
