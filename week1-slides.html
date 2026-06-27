@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>소문설계 발표자료</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:#f5f4f2;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:1rem}
+.deck{width:100%;max-width:720px}
+.timer-row{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.timer-label{font-size:13px;color:#666}
+.timer-display{font-size:14px;font-weight:600;color:#444;min-width:42px}
+.timer-btn{background:#fff;border:1px solid #ddd;border-radius:8px;padding:4px 14px;font-size:12px;cursor:pointer;color:#444}
+.timer-btn:hover{background:#f0f0f0}
+.timer-btn.running{color:#0F6E56;border-color:#0F6E56}
+.slide{display:none;flex-direction:column;gap:0}
+.slide.active{display:flex}
+.slide-inner{background:#fff;border:1px solid #e8e6e2;border-radius:16px;padding:2rem 2rem 1.75rem;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:16px}
+.tag-gray{background:#f1efe8;color:#555}
+.tag-purple{background:#eeedfe;color:#3C3489}
+.tag-teal{background:#e1f5ee;color:#085041}
+.tag-coral{background:#faece7;color:#712B13}
+.slide-title{font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:8px;line-height:1.4}
+.slide-sub{font-size:15px;color:#666;margin-bottom:1.4rem;line-height:1.65}
+hr.div{border:none;border-top:1px solid #eee;margin:14px 0}
+.val-list{display:flex;flex-direction:column;gap:10px}
+.val-box{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:#f9f8f6;border-radius:10px}
+.val-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.val-title{font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:3px}
+.val-desc{font-size:13px;color:#666;line-height:1.6}
+.need-block{margin-bottom:14px}
+.need-block:last-child{margin-bottom:0}
+.need-top{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.need-label{font-size:12px;font-weight:600;padding:4px 12px;border-radius:20px;white-space:nowrap}
+.need-quote{font-size:14px;color:#555;line-height:1.55}
+.arrow-row{display:flex;align-items:center;gap:6px;padding-left:4px}
+.arrow-svg{color:#999}
+.solution{font-size:14px;font-weight:600;color:#1a1a1a;line-height:1.5}
+.strat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.s-card{background:#f9f8f6;border-radius:10px;padding:14px 16px}
+.s-card-title{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:4px}
+.s-card-desc{font-size:13px;color:#666;line-height:1.5}
+.big-quote{font-size:17px;font-weight:600;color:#1a1a1a;line-height:1.8;border-left:4px solid #7F77DD;padding-left:16px;margin:1.2rem 0}
+.big-quote em{color:#534AB7;font-style:normal}
+.closing{font-size:14px;color:#666;line-height:1.75}
+.closing strong{color:#1a1a1a}
+.nav-row{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding:0 2px}
+.nav-btn{background:#fff;border:1px solid #ddd;border-radius:10px;padding:8px 20px;font-size:13px;color:#333;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background 0.15s}
+.nav-btn:disabled{opacity:0.3;cursor:not-allowed}
+.nav-btn:hover:not(:disabled){background:#f5f4f2}
+.counter{font-size:13px;color:#999}
+@media(max-width:540px){
+  .slide-title{font-size:18px}
+  .strat-grid{grid-template-columns:1fr}
+  .big-quote{font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="deck">
+  <div class="timer-row">
+    <span class="timer-label">⏱</span>
+    <span class="timer-display" id="timer">2:00</span>
+    <button class="timer-btn" id="timerBtn" onclick="toggleTimer()">시작</button>
+  </div>
+
+  <!-- Slide 1 -->
+  <div class="slide active" id="s1">
+    <div class="slide-inner">
+      <span class="tag tag-gray">도입 · 15초</span>
+      <p class="slide-title">혼자 가도 근사하고,<br>그러다 결이 맞는 사람을 발견하는 공간</p>
+      <p class="slide-sub">30·40 중심 — 소개팅·헌팅이 아닌 <strong>취향 기반 연결</strong>을 설계합니다.</p>
+      <hr class="div">
+      <div class="val-list">
+        <div class="val-box">
+          <div class="val-dot" style="background:#888780"></div>
+          <div>
+            <p class="val-title">찾은 시장</p>
+            <p class="val-desc">혼자의 시간이 늘었지만, 초라하게 보내고 싶지 않은 30·40.<br>새로운 인연엔 열려있지만 노골적인 만남은 부담스러운 사람들.</p>
+          </div>
+        </div>
+        <div class="val-box">
+          <div class="val-dot" style="background:#534AB7"></div>
+          <div>
+            <p class="val-title">우리의 답</p>
+            <p class="val-desc">관심사 기반 주제별 운영 + '나에게 주는' 칵테일 + 대화의 수준으로<br>같은 결의 사람을 <strong>자연스럽게 발견</strong>하게 한다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="slide" id="s2">
+    <div class="slide-inner">
+      <span class="tag tag-purple">욕구 3층 + 해결 · 50초</span>
+      <p class="slide-title">고객의 욕구와, 우리의 해결</p>
+      <p class="slide-sub">표면에 드러난 욕구부터 가장 깊은 욕구까지 — 각각에 맞는 장치를 설계했습니다.</p>
+
+      <div class="need-block">
+        <div class="need-top">
+          <span class="need-label" style="background:#f1efe8;color:#555">표면 욕구</span>
+          <span class="need-quote">혼자서도 우아하고 여유롭게 시간을 보내고 싶다</span>
+        </div>
+        <div class="arrow-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <span class="solution">우아한 공간·조명·칵테일로 '혼자여도 근사한 시간' 연출</span>
+        </div>
+      </div>
+      <hr class="div">
+      <div class="need-block">
+        <div class="need-top">
+          <span class="need-label" style="background:#faeeda;color:#633806">내면 욕구</span>
+          <span class="need-quote">그 시간을 사진으로 남겨 인스타에 자연스럽게 과시하고 싶다</span>
+        </div>
+        <div class="arrow-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <span class="solution">인스타 소재성 비주얼 + "오늘도 수고했어" 같은 칵테일 네이밍</span>
+        </div>
+      </div>
+      <hr class="div">
+      <div class="need-block">
+        <div class="need-top">
+          <span class="need-label" style="background:#eeedfe;color:#3C3489">잠재 욕구</span>
+          <span class="need-quote">그러다 나와 비슷한 결의 사람과 자연스럽게 이어졌으면 한다</span>
+        </div>
+        <div class="arrow-row">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          <span class="solution">심리테스트형 초대 + 주제별 캘린더(독서·와인) + 스태프 대화 교육</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="slide" id="s3">
+    <div class="slide-inner">
+      <span class="tag tag-teal">운영 장치 · 30초</span>
+      <p class="slide-title">소문나게 하는 4가지 장치</p>
+      <p class="slide-sub">'만남 주선'이 아닌 '취향 기반 발견'으로 재정의해 헌팅바와 확실히 차별화합니다.</p>
+      <div class="strat-grid">
+        <div class="s-card">
+          <p class="s-card-title">😊 심리테스트형 초대</p>
+          <p class="s-card-desc">관심사로 그룹화해 첫 만남의 어색함을 제거</p>
+        </div>
+        <div class="s-card">
+          <p class="s-card-title">📅 주제별 캘린더</p>
+          <p class="s-card-desc">독서·와인 등 정기 모임으로 재방문 동기 설계</p>
+        </div>
+        <div class="s-card">
+          <p class="s-card-title">🍹 칵테일 네이밍</p>
+          <p class="s-card-desc">자기 위로 메시지 → 인스타 자발 공유 유도</p>
+        </div>
+        <div class="s-card">
+          <p class="s-card-title">💬 스태프 대화 교육</p>
+          <p class="s-card-desc">깊이 있는 대화 능력으로 대화 수준 전체를 높임</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4 -->
+  <div class="slide" id="s4">
+    <div class="slide-inner">
+      <span class="tag tag-coral">마무리 · 15초</span>
+      <p class="slide-title">소문 공식</p>
+      <div class="big-quote">
+        혼자 가도 근사했고 →<br>
+        사진이 예뻐서 올렸더니 →<br>
+        <em>"거기 어디야?"</em> 라는 DM이 온다.
+      </div>
+      <hr class="div">
+      <p class="closing">
+        만남을 가장 깊은 잠재 욕구에 두고, 표면·내면을 먼저 채우는 것이 핵심입니다.<br>
+        <strong>소문을 설계하는 것이 아니라, 소문이 날 수밖에 없는 경험을 설계합니다.</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-row">
+    <button class="nav-btn" id="prevBtn" onclick="goSlide(-1)" disabled>← 이전</button>
+    <span class="counter"><span id="cur">1</span> / 4</span>
+    <button class="nav-btn" id="nextBtn" onclick="goSlide(1)">다음 →</button>
+  </div>
+</div>
+
+<script>
+var cur=1,total=4;
+var timerSec=120,timerRunning=false,timerInt=null;
+function goSlide(d){
+  document.getElementById('s'+cur).classList.remove('active');
+  cur=Math.max(1,Math.min(total,cur+d));
+  document.getElementById('s'+cur).classList.add('active');
+  document.getElementById('cur').textContent=cur;
+  document.getElementById('prevBtn').disabled=cur===1;
+  document.getElementById('nextBtn').disabled=cur===total;
+}
+function toggleTimer(){
+  var btn=document.getElementById('timerBtn');
+  if(!timerRunning){
+    timerRunning=true;btn.textContent='정지';btn.classList.add('running');
+    timerInt=setInterval(function(){
+      if(timerSec<=0){clearInterval(timerInt);timerRunning=false;btn.textContent='종료';btn.classList.remove('running');return;}
+      timerSec--;
+      var m=Math.floor(timerSec/60),s=timerSec%60;
+      document.getElementById('timer').textContent=m+':'+(s<10?'0':'')+s;
+    },1000);
+  } else {
+    timerRunning=false;clearInterval(timerInt);btn.textContent='재개';btn.classList.remove('running');
+  }
+}
+</script>
+</body>
+</html>
