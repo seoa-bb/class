@@ -1,134 +1,126 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>소문설계 1기 · 2조 자료실</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서아 강의 자료실</title>
 <style>
-  :root{--bg:#f6f2ea;--card:#fffdf8;--ink:#2c2620;--mute:#7a6f60;--wine:#7c4a52;--line:#e6ddcd;--gold:#b08a4f}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
-    -webkit-font-smoothing:antialiased;line-height:1.6}
-  .wrap{max-width:760px;margin:0 auto;padding:56px 20px 80px}
-  .kicker{font-size:13px;letter-spacing:.14em;color:var(--wine);font-weight:700;text-transform:uppercase}
-  h1{font-size:30px;margin:10px 0 6px;letter-spacing:-.01em}
-  .sub{color:var(--mute);font-size:15px;margin-bottom:36px}
-  .group{margin:0 0 14px;font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.06em}
-  a.card{display:flex;align-items:center;gap:16px;text-decoration:none;color:inherit;
-    background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:18px 20px;margin-bottom:12px;transition:.15s}
-  a.card:hover{border-color:var(--wine);transform:translateY(-1px);box-shadow:0 10px 24px rgba(44,38,32,.07)}
-  .num{flex:none;width:34px;height:34px;border-radius:9px;background:var(--wine);color:#fff;
-    display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px}
-  .t{font-weight:700;font-size:16px}
-  .d{color:var(--mute);font-size:13px;margin-top:2px}
-  .arrow{margin-left:auto;color:var(--wine);font-size:20px}
-  .sec{margin-top:30px}
-  footer{margin-top:48px;color:var(--mute);font-size:12px;text-align:center;line-height:1.7}
+  :root {
+    --navy: #1a2744;
+    --blue: #2563eb;
+    --teal: #0d9488;
+    --bg: #f8faff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Pretendard', 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  .hero {
+    background: linear-gradient(135deg, #0a1628 0%, var(--navy) 60%, #1e3a8a 100%);
+    color: #fff;
+    padding: 64px 24px 52px;
+    text-align: center;
+  }
+  .hero .badge { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; padding: 5px 18px; font-size: 13px; margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(24px, 5vw, 38px); font-weight: 900; line-height: 1.25; margin-bottom: 10px; }
+  .hero h1 span { color: #93c5fd; }
+  .hero .sub { font-size: 15px; opacity: 0.75; }
+
+  .container { max-width: 640px; margin: 0 auto; padding: 48px 16px 80px; }
+
+  .course-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    text-decoration: none;
+    display: block;
+    color: var(--text);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .course-card:hover { box-shadow: 0 8px 32px rgba(37,99,235,0.12); transform: translateY(-2px); }
+
+  .cc-header { padding: 28px 28px 20px; display: flex; align-items: flex-start; gap: 18px; }
+  .cc-icon { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 26px; flex-shrink: 0; }
+  .cc-icon.blue { background: linear-gradient(135deg, #1d4ed8, #3b82f6); }
+  .cc-icon.teal { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+  .cc-info .cc-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .cc-info .cc-label.blue { color: var(--blue); }
+  .cc-info .cc-label.teal { color: var(--teal); }
+  .cc-info .cc-title { font-size: 20px; font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 4px; }
+  .cc-info .cc-sub { font-size: 13px; color: var(--muted); }
+
+  .cc-tags { padding: 0 28px 22px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .cc-tag { font-size: 11px; font-weight: 600; padding: 3px 10px; border-radius: 999px; }
+  .cc-tag.blue { background: #dbeafe; color: var(--blue); }
+  .cc-tag.teal { background: #ccfbf1; color: #0d9488; }
+
+  .cc-footer { background: #f8faff; border-top: 1px solid var(--border); padding: 14px 28px; display: flex; justify-content: space-between; align-items: center; }
+  .cc-footer .cf-text { font-size: 13px; color: var(--muted); }
+  .cc-footer .cf-arrow { font-size: 20px; color: var(--blue); }
+
+  footer { background: var(--navy); color: rgba(255,255,255,0.45); text-align: center; padding: 24px 16px; font-size: 12px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="kicker">소문설계 1기 · 2조</div>
-  <h1>자료실</h1>
-  <p class="sub">김서아 · 배영순 · 하지우 · 박지호 — 강의 정리 / 발표 / 회의 / 과제 모음</p>
 
-  <div class="sec">
-    <div class="group">1주차 — 소문거리 발굴</div>
-    <a class="card" href="week1-deck.html">
-      <span class="num">발</span>
-      <span><span class="t">1주차 발표 자료 (덱)</span><span class="d">혼자도 우아하게 — 감성 사교 바 컨셉 발표</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week1-slides.html">
-      <span class="num">발</span>
-      <span><span class="t">1주차 발표 슬라이드 (2분 · 넘기는 형식)</span><span class="d">발표용 간단 버전 — 도입·시장·욕구 3층·운영 장치·소문 공식</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week1-feedback.html">
-      <span class="num">피</span>
-      <span><span class="t">1주차 발표 피드백 정리</span><span class="d">강사님 피드백 — 잘한 점 / 해결 가치가 뾰족하지 않다</span></span>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-
-  <div class="sec">
-    <div class="group">2주차 — 소문 장치 제작</div>
-    <a class="card" href="week2-lecture.html">
-      <span class="num">강</span>
-      <span><span class="t">2주차 강의 정리</span><span class="d">가치 선언문 · 소문 문장 7검증 · 오브제 / 이미지 + 6개 조 피드백 종합</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week2-meeting-brief.html">
-      <span class="num">회</span>
-      <span><span class="t">2주차 조별 회의안 (공유용)</span><span class="d">최종 정해진 방향 + 각자 해올 숙제 — 참석 못 한 분도 바로 확인</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week2-assignment.html">
-      <span class="num">과</span>
-      <span><span class="t">2주차 조별 과제</span><span class="d">회의 정리 · 1주차 수정 · 가치 선언문 · 소문 문장 · 오브제</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week2-presentation.html">
-      <span class="num">발</span>
-      <span><span class="t">2주차 발표 한 장 (조별)</span><span class="d">발표용 — 가치 선언문 + 오브제 이미지만</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week2-domidari.html">
-      <span class="num">개</span>
-      <span><span class="t">2주차 개별 과제 — 도미다리</span><span class="d">우리가 숨겨온 정성 = 물기 정성 · 가치 선언문 · 소문 문장 · 오브제</span></span>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-
-  <div class="sec">
-    <div class="group">3주차 — 소문 확산 실행</div>
-    <a class="card" href="week3-lecture.html">
-      <span class="num">강</span>
-      <span><span class="t">3주차 강의 정리</span><span class="d">매체 = 소문 확산 · 매스 5종(검색·공간·상품·사람·콘텐츠) + 온 마케팅</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week3-feedback.html">
-      <span class="num">피</span>
-      <span><span class="t">3주차 6개 조 발표 피드백</span><span class="d">‘선 긋기’ · 오브제는 소문낼 구실 · 우리 2조(글래스 코드) 포함</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week3-assignment.html">
-      <span class="num">과</span>
-      <span><span class="t">3주차 조별 과제 — 글래스 코드 소문 확산</span><span class="d">매스(검색·공간) · 온(취미 모임 호스트 콜라보) · 협약 give-get · 컨택</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week3-presentation.html">
-      <span class="num">발</span>
-      <span><span class="t">3주차 발표 한 장 (조별)</span><span class="d">발표용 5장 (넘기는 형식) — 소개 → 온(모임·지정·협약) → 매스 5가지 중 선택 → 정리</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week3-domidari.html">
-      <span class="num">개</span>
-      <span><span class="t">3주차 개별 과제 — 도미다리</span><span class="d">매스(상품 매체·오늘의 모둠회 안내 카드) · 온(모임 주선자) · 콘텐츠 지시서 5가지</span></span>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-
-  <div class="sec">
-    <div class="group">주간 보고 (조장)</div>
-    <a class="card" href="week1-report.html">
-      <span class="num">보</span>
-      <span><span class="t">1주차 주간 보고</span><span class="d">강의 출석 · 스터디 인증 · 과제 — 4인 전원</span></span>
-      <span class="arrow">→</span>
-    </a>
-    <a class="card" href="week2-report.html">
-      <span class="num">보</span>
-      <span><span class="t">2주차 주간 보고</span><span class="d">강의 출석 · 스터디 인증 · 과제 — 4인 전원</span></span>
-      <span class="arrow">→</span>
-    </a>
-  </div>
-
-  <footer>
-    동래도미다리횟집 · 소문설계 스터디<br>
-    링크를 아는 사람만 볼 수 있습니다.
-  </footer>
+<div class="hero">
+  <div class="badge">📚 강의 자료실</div>
+  <h1>서아의<br><span>강의 정리 모음</span></h1>
+  <div class="sub">Claude 독립 정리본 · 헤르메스 버전과 비교용</div>
 </div>
+
+<div class="container">
+
+  <a class="course-card" href="somun/index.html">
+    <div class="cc-header">
+      <div class="cc-icon blue">💬</div>
+      <div class="cc-info">
+        <div class="cc-label blue">COURSE 1</div>
+        <div class="cc-title">소문설계 강의</div>
+        <div class="cc-sub">제갈현열 소문설계 — 브랜드 소문 만들기 전략</div>
+      </div>
+    </div>
+    <div class="cc-tags">
+      <span class="cc-tag blue">소문의 법칙</span>
+      <span class="cc-tag blue">2조 과제</span>
+      <span class="cc-tag blue">도미다리 적용</span>
+      <span class="cc-tag blue">1~3주차</span>
+    </div>
+    <div class="cc-footer">
+      <span class="cf-text">somun/ 폴더</span>
+      <span class="cf-arrow">›</span>
+    </div>
+  </a>
+
+  <a class="course-card" href="jiwon/index.html">
+    <div class="cc-header">
+      <div class="cc-icon teal">💰</div>
+      <div class="cc-info">
+        <div class="cc-label teal">COURSE 2</div>
+        <div class="cc-title">도원결의 무상지원금 마스터</div>
+        <div class="cc-sub">정부지원사업 사업계획서 완전 정복 + 월간 세미나</div>
+      </div>
+    </div>
+    <div class="cc-tags">
+      <span class="cc-tag teal">1~4강 완료</span>
+      <span class="cc-tag teal">6월 세미나</span>
+      <span class="cc-tag teal">PSST 프레임워크</span>
+      <span class="cc-tag teal">R&D 입문</span>
+    </div>
+    <div class="cc-footer">
+      <span class="cf-text">jiwon/ 폴더</span>
+      <span class="cf-arrow">›</span>
+    </div>
+  </a>
+
+</div>
+
+<footer>Claude 독립 정리본 · 강의 원본과 함께 참고하세요</footer>
+
 </body>
 </html>
