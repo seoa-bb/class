@@ -24,24 +24,20 @@
   .lead{background:var(--deep);color:#fbf7ee;border-radius:14px;padding:18px 20px;margin:12px 0;font-size:16px;font-weight:700;line-height:1.55}.lead span{color:#e6c06a}
   .note{background:var(--soft);border:1px solid #e0d4bd;border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px;margin:12px 0;font-size:14.5px}.note b{color:var(--gold)}
   .flag{background:#fbf1e8;border:1px dashed #d8b48f;border-radius:12px;padding:13px 16px;margin:12px 0;font-size:14px;color:#7a5638}.flag b{color:var(--wine)}
-  .decl{border:2px solid var(--deep);border-radius:14px;background:var(--cream);padding:20px 22px;margin:12px 0}
-  .decl .big{font-family:"Noto Serif KR",serif;font-size:18.5px;font-weight:800;line-height:1.5;color:var(--deep)}
-  .pcf{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:12px 0;align-items:start}
-  .pcf .k{font-weight:800;color:var(--gold);font-size:13.5px;white-space:nowrap;padding-top:2px}
-  .pcf .v{font-size:14.5px}
-  .tmpl{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
-  .tmpl .box{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--cream);font-size:14px}
-  .tmpl .h{display:inline-block;border-radius:6px;padding:3px 9px;font-size:12.5px;font-weight:800;color:#fff;margin-bottom:7px}
-  .tmpl .a .h{background:var(--olive)}.tmpl .b2 .h{background:var(--gold)}
-  .flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:8px 0;font-size:13.5px}
-  .flow span{background:#fff;border:1px solid var(--line);border-radius:8px;padding:5px 11px;font-weight:700}
-  .flow em{color:var(--gold);font-style:normal;font-weight:800}
+  table{width:100%;border-collapse:collapse;margin:10px 0;background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:14.5px;vertical-align:top}
+  th{background:var(--soft);color:var(--gold);font-weight:850;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.role{font-weight:800;color:var(--wine);white-space:nowrap}
+  .decl{border:2px solid var(--deep);border-radius:14px;background:var(--cream);padding:22px 24px;margin:12px 0}
+  .decl p{margin:10px 0;font-size:15px;line-height:1.7}
+  .decl .pop{font-family:"Noto Serif KR",serif;font-size:17px;font-weight:800;color:var(--deep);text-align:center;margin:16px 0}
   .src{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:10px 0}
   .src .row{display:flex;border-top:1px solid var(--line)}.src .row:first-child{border-top:none}
-  .src .k{flex:none;width:150px;background:var(--soft);font-weight:800;color:var(--wine);padding:11px 13px;font-size:13.5px}
+  .src .k{flex:none;width:118px;background:var(--soft);font-weight:800;color:var(--wine);padding:11px 13px;font-size:13.5px}
   .src .v{padding:11px 13px;font-size:14px}
   footer{text-align:center;color:var(--mute);font-size:13px;margin-top:30px}
-  @media(max-width:680px){.tmpl{grid-template-columns:1fr}.src .k{width:104px}}
+  @media(max-width:680px){.src .k{width:92px}th,td{font-size:13.5px;padding:9px 10px}}
 </style>
 </head>
 <body>
@@ -50,72 +46,82 @@
     <div class="eyebrow">소문설계 1기 · 4주차 개별 과제 · 동래도미다리횟집</div>
     <h1>소문 저장소 — 자기 채널 구축</h1>
     <div class="slogan">“회는, 도미다리. 누구와도 편안하게.”</div>
-    <p class="sub">채널(블로그) + 콘텐츠 템플릿 + <b>자기 선언문</b> · 개인 컨설팅(7/15) 지참용 · 김서아<br>
-    <span class="mute">※ 강사님 컨설팅 + 회식 대화 반영. 아직 완성된 정답이 아니라 <b>가고 싶은 방향의 가설</b>입니다.</span></p>
+    <p class="sub">소문 구조 · 자기 선언문 · 채널(블로그) · 콘텐츠 · 개인 컨설팅(7/15) 지참용 · 김서아<br>
+    <span class="mute">※ 강사님 컨설팅 + 부부 대화에서 다듬은 방향. 상권·타겟에 맞게 표현은 조정될 수 있음.</span></p>
   </div>
 
   <section>
     <h2><span class="n">0</span>이번 주 핵심 — 뭘 쓸까보다 ‘어떤 관점’인지 먼저</h2>
-    <div class="lead">“블로그에 뭘 올릴까”보다 먼저, <span>서아가 어떤 관점으로 도미다리를 ‘설명’할 사람인지</span>를 정한다.</div>
+    <div class="lead">회 전문가인 척하지 않는다. 대신 <span>도미다리를 믿게 만드는 ‘서아의 관점’을 ‘설명’</span>한다.</div>
     <ul>
-      <li>강사님 요지: <b>회 전문가인 척할 필요 없다.</b> 대신 도미다리를 믿게 만드는 <b>‘서아만의 관점’</b>을 선언하라.</li>
-      <li>나는 도미다리를 “우리가 잘한다”고 <b>알리는 사람이 아니라, 담긴 의도와 기준을 ‘설명하는’ 사람</b>이 되고 싶다.</li>
-      <li>직접 회를 썰지 않아도 된다. <b>남편의 손질·매장의 기준·손님의 반응을 아내의 시선으로</b> 보여주면 된다 = 도미다리 신뢰를 쌓는 관찰자·기록자.</li>
+      <li>나는 “우리가 잘한다”고 <b>알리는 사람</b>이 아니라, 도미다리에 담긴 <b>의도와 기준을 ‘설명하는’ 사람</b>이 되고 싶다.</li>
+      <li>직접 회를 썰지 않아도 된다. <b>남편의 손질·매장의 기준·손님의 반응을 아내의 시선으로</b> 기록 = 도미다리 신뢰를 쌓는 관찰자.</li>
     </ul>
   </section>
 
   <section>
-    <h2><span class="n">1</span>자기 선언문 — 비린맛에 예민한 사람이 기준이 된 횟집</h2>
+    <h2><span class="n">1</span>소문 구조 — 한 인식, 여러 층 (핵심)</h2>
+    <p class="mute">강사님 “문장이 아니라 인식 하나.” 도미다리의 인식 = <b>“회가 무섭지 않은 집”</b>. 그 아래 층을 나누면 재료가 하나도 안 버려진다.</p>
+    <table>
+      <tr><th>층</th><th>역할</th><th>문장</th></tr>
+      <tr><td class="role">간판</td><td>누구를 위한 집인가</td><td><b>회가 조심스러운 사람도 편안한 횟집</b></td></tr>
+      <tr><td class="role">심장</td><td>왜 이 집이어야 하나</td><td>좋은 한 점이, 회에 대한 기억을 바꿉니다</td></tr>
+      <tr><td class="role">태도</td><td>어떻게 대하는가</td><td>처음 온 손님일수록, 더 조심스럽게</td></tr>
+      <tr><td class="role">소문 엔진</td><td>손님이 옮겨 말할 것</td><td>회 잘 몰라도, 한 끗 차이를 <b>발견</b>하게 되는 집</td></tr>
+      <tr><td class="role">근거</td><td>왜 우리가 말할 수 있나</td><td>회 좋아하는 남편 + 회가 어려웠던 아내</td></tr>
+      <tr><td class="role">증거</td><td>실제로 무엇을 하나</td><td>물기 정성 · 주문 즉시 손질 · 해동지 재사용 없음</td></tr>
+    </table>
+    <div class="note"><b>‘감별’ 아니라 ‘발견’</b> — “회 좀 아는 사람만 안다”(시험형)는 조심스러운 손님을 밀어낸다. 도미다리는 <b>“몰라도 괜찮아요. 한 점 먹다 보면 왜 다른지 알게 돼요”</b>(발견형). 자랑거리는 만들되, 안심 포지션은 안 깨지게.</div>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>자기 선언문</h2>
     <div class="decl">
-      <div class="big">“나는 회 전문가라고 말하는 게 아니라,<br>회가 <u>어려웠던</u> 사람의 마음으로 회를 만드는 사람입니다.”</div>
+      <p>도미다리는 회가 조심스러운 사람도 편안하게 앉을 수 있는 횟집이고 싶습니다.</p>
+      <p>회는 새로운 가게에 도전하기가 생각보다 어려운 음식입니다. 겉으로 보기에는 괜찮아 보여도, 한 번 좋지 않은 기억이 남으면 다시 회를 고르기가 조심스러워집니다.</p>
+      <p>그래서 저는 도미다리를 단순히 “맛있는 횟집”으로 말하고 싶지 않습니다. 회가 처음인 사람도, 예전에 회가 어려웠던 사람도, 새로운 횟집을 고를 때 망설이는 사람도 안심하고 한 점을 집을 수 있는 집으로 만들고 싶습니다.</p>
+      <p class="pop">“좋은 한 점이, 회에 대한 기억을 바꿉니다.”</p>
+      <p>남편은 회를 정말 좋아하는 사람이고, 저는 비린맛에 예민했던 사람입니다. 회가 좋은 사람과 회가 어려웠던 사람이 함께 도미다리를 바라보면서, 저희는 회를 잘 아는 사람만 만족하는 집이 아니라 회가 조심스러운 사람도 편안한 횟집을 고민하게 되었습니다.</p>
+      <p>그 안심을 만들기 위해 도미다리는 손질의 작은 차이를 놓치지 않으려 합니다. 주문이 들어온 뒤 회를 손질하고, 회가 나가기 전 물기를 한 번 더 살피고, 처음 온 손님일수록 더 조심스럽게 내려고 합니다.</p>
+      <p>회 잘 몰라도 괜찮습니다. 좋은 한 점은 기억에 남고, 그 한 점이 회에 대한 생각을 바꿀 수도 있다고 믿습니다.</p>
     </div>
-    <p class="mute">자긍심이 없던 게 아니라, 자랑처럼 보일까 봐 눌러왔을 뿐. 이제는 <b>기준을, 방향으로</b> 말한다.</p>
-    <div class="pcf">
-      <div class="k">과거</div><div class="v"><b>비린맛에 예민해 회를 편하게 먹지 못하던 사람.</b> 그래서 회를 잘 아는 사람보다 <b>회가 어려운 사람의 마음</b>을 먼저 안다.</div>
-      <div class="k">현재</div><div class="v">그 예민함을 <b>도미다리의 기준</b>으로 삼아, 남편과 함께 <b>회가 어려운 사람도 편하게 먹을 수 있는 회</b>를 고민하고 기록한다.</div>
-      <div class="k">미래</div><div class="v">그 기준을 설명하고 더 낫게 만들며, <b>작은 가게를 나만의 관점으로 브랜드로 키워가는 사람.</b></div>
-    </div>
-    <div class="note"><b>블로그·인스타 프로필용 (짧게)</b><br>
-    “비린맛에 예민한 사람이 기준이 된 횟집, 도미다리를 운영합니다. 회가 어려운 사람도 편하게 먹을 수 있고, 회를 좋아하는 사람도 만족할 수 있는 기준을 고민하며 기록합니다.”</div>
-    <div class="flag"><b>가설 표시</b> — 이 방향이 정답이라는 게 아니라 <b>가고 싶은 방향</b>입니다. 상권·타겟에 따라 <b>표현·메뉴 단위·가격·분위기·서비스는 조정</b>하되, 핵심 기준(<b>누구와도 편안하게</b>)은 지킵니다.</div>
+    <div class="note"><b>과거·현재·미래(강사 틀)</b> — 과거: 비린맛에 예민해 회가 어려웠던 사람 / 현재: 그 예민함을 도미다리의 기준으로 삼아 남편과 함께 안심을 고민·기록 / 미래: 그 기준으로 작은 가게를 브랜드로 키워가는 사람.</div>
   </section>
 
   <section>
-    <h2><span class="n">2</span>채널 — 이미 최적화된 블로그 + ‘우리(부부)’ 관점</h2>
+    <h2><span class="n">3</span>채널 — 최적화된 블로그 + ‘우리(부부)’ 관점</h2>
     <ul>
-      <li><b>채널 = 기존 블로그.</b> 죽은 줄 알았는데 <b>이미 최적화</b>돼 있음. 강사님도 “그 블로그가 제일 맞다.” 이미지+글로 꾸준히 되는, 손에 익은 채널 → <b>오늘 날짜로 다시 시작</b>(시간이 곧 증거).</li>
-      <li><b>누가 등장? = ‘우리’.</b> 내가 직접 손질하지 않아도 된다. <b>남편의 손</b>이 회를 손질하고, <b>아내가 그걸 보여주고 함께 관리</b>하는 시선으로.</li>
+      <li><b>채널 = 기존 블로그.</b> 죽은 줄 알았는데 이미 <b>최적화</b>돼 있음. 강사님도 “그 블로그가 제일 맞다.” 이미지+글로 꾸준히 되는 채널 → <b>오늘 날짜로 다시 시작</b>(시간이 곧 증거).</li>
+      <li><b>누가 등장? = ‘우리’.</b> 내가 직접 손질하지 않아도 된다. <b>남편의 손</b>이 손질하고, <b>아내가 보여주고 함께 관리</b>하는 시선으로.</li>
     </ul>
-    <div class="note"><b>강사님 주의</b> — “위기를 만들지 마라.” 무리해서 컨셉을 밀어붙이기보다, <b>핵심 기준은 지키고 나머지는 상권에 맞춰</b> 천천히.</div>
+    <div class="note"><b>강사님 주의</b> — “위기를 만들지 마라.” 무리해서 밀어붙이기보다 핵심 기준(안심)은 지키고 나머지는 상권에 맞춰 천천히.</div>
   </section>
 
   <section>
-    <h2><span class="n">3</span>콘텐츠 템플릿 — 반복 가능한 2요소 (강사님 제안)</h2>
-    <p class="mute">그때그때 새로 찍지 말고, <b>공식을 고정</b>해서 꾸준히. 처음엔 이 두 가지만 반복해도 충분.</p>
-    <div class="tmpl">
-      <div class="box a"><span class="h">① 물 빼기 타임랩스</span>어종별로(광어·전어·도다리…) <b>여러 번 물기를 잡아내는 정성</b>을 짧은 타임랩스로. 비린맛을 <b>덜어내는</b> 그 과정이 곧 소문거리.</div>
-      <div class="box b2"><span class="h">② 완성된 한 접시</span>그렇게 손질된 회 한 접시 + <b>‘먹음직’ 컷</b>. “회가 어려운 사람도 편하게”가 눈에 보이게.</div>
-    </div>
-    <div class="note"><b>글의 공식 = 생각 정리형</b> (내 결에 맞는 방식)
-      <div class="flow" style="margin-top:8px"><span><em>감정</em> 겪은 마음</span>→<span><em>질문</em> 붙잡은 물음</span>→<span><em>한 문장</em> 정리한 기준</span></div>
-      맛집 홍보·성공기 X → <b>장사하며 생긴 생각·감정, 도미다리를 더 낫게 만드는 고민의 과정</b>을 문장으로.
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="n">4</span>이제 소재 고민을 던다 — 관점 하나로 다 연결</h2>
-    <p class="mute">“오늘 뭘 쓰지?”가 아니라 <b>“오늘 본 장면을 내 관점으로 어떻게 해석하지?”</b>로 바뀐다. 소재 5갈래:</p>
+    <h2><span class="n">4</span>콘텐츠 — ‘발견’을 만드는 엔진 + 반복 템플릿</h2>
+    <h3>① 발견 엔진 — 사람이 한 마디 얹어야 발견이 일어난다</h3>
+    <p class="mute">강사님 <b>프레이밍</b>(절창집 “씹을수록 고소한 부위”). 손님은 스스로 못 느낀다 — 직원/신랑이 <b>한 마디</b> 얹으면 그때 “어 진짜 다르네” 발견 → 그게 자랑이 된다.</p>
+    <div class="note">예: <b>“이건 물기를 여러 번 잡아낸 거라, 씹을수록 단맛이 올라와요.”</b> → 손님: “어, 진짜 물컹하지 않네?” → 남한테 옮김: <i>“나 회 잘 몰랐는데, 거기서 물기 하나로 식감이 다른 걸 처음 알았어.”</i></div>
+    <h3>② 반복 콘텐츠 템플릿 (물기 = 간판 아니라 ‘증거’)</h3>
+    <ul>
+      <li><b>물 빼기 타임랩스</b>(어종별) — 비린맛을 <b>덜어내는</b> 과정. 자막: <i>“물기 하나만 덜어도, 한 점의 기억이 달라집니다.”</i></li>
+      <li><b>완성 한 접시 + 먹음직 컷</b> — “회 잘 몰라도 느낄 수 있는 차이.”</li>
+      <li><b>글 공식 = 생각 정리형</b>: 겪은 감정 → 붙잡은 질문 → 정리한 한 문장.</li>
+    </ul>
+    <h3>③ 가벼운 장치 (엔진 아님, 양념)</h3>
+    <p class="mute"><b>회잘냥 / 회못냥</b> — 회 좋아하는 고양이 · 회 조심스러운 고양이가 같이 가는 집. 실제 손님 조합(남편-아내, 부모-자식)을 귀엽게. <b>단, 브랜드 얼굴이 아니라 가끔 쓰는 시리즈로.</b> 앞엔 언제나 ‘안심’.</p>
+    <h3>④ 소재 갈래 (관점 하나로 다 연결)</h3>
     <div class="src">
-      <div class="row"><div class="k">① 비린맛의 시선</div><div class="v">서아만의 이야기 — “회가 어려운 사람은 맛보다 먼저 냄새를 본다” / “나 같은 사람도 편하게 먹을 회를 고민하게 된 이유”</div></div>
-      <div class="row"><div class="k">② 아내의 기록</div><div class="v">남편 손질을 아내 시선으로 — “손님은 모르지만 회 나가기 전 우리가 확인하는 것” / “물기를 여러 번 잡아내는 이유”</div></div>
-      <div class="row"><div class="k">③ 회 초보 안내</div><div class="v">고객에게 바로 도움(검색·방문 이유) — “회 잘 몰라도 모둠회 고르는 법” / “부모님 모시고 갈 때 보면 좋은 기준”</div></div>
-      <div class="row"><div class="k">④ 나아지는 과정</div><div class="v">공부하는 자영업자 모습 — “도미다리를 더 잘 알리고 싶어 브랜딩을 배우는 중” / “블로그를 다시 시작한 이유”</div></div>
-      <div class="row"><div class="k">⑤ 손님이 알려준 것</div><div class="v">반응에서 발견한 기준 — “비린맛 걱정하던 손님이 남긴 말” / “회 잘 아는 손님이 ‘여긴 다르다’고 했을 때”</div></div>
+      <div class="row"><div class="k">① 안심의 시선</div><div class="v">“회가 어려운 사람은 맛보다 먼저 안심을 찾는다” / “실패하고 싶지 않은 자리(부모님 모시고)”</div></div>
+      <div class="row"><div class="k">② 아내의 기록</div><div class="v">남편 손질을 아내 시선으로 — “회 나가기 전 물기를 한 번 더 살피는 이유” / “해동지 재사용 안 하는 이유”</div></div>
+      <div class="row"><div class="k">③ 발견 안내</div><div class="v">“회 잘 몰라도 모둠회 고르는 법” / “비린맛 걱정될 때 이렇게 요청하세요”</div></div>
+      <div class="row"><div class="k">④ 나아지는 과정</div><div class="v">공부하는 자영업자 — “도미다리를 더 잘 알리고 싶어 배우는 중” / “블로그를 다시 시작한 이유”</div></div>
+      <div class="row"><div class="k">⑤ 손님이 알려준 것</div><div class="v">“비린맛 걱정하던 손님이 남긴 말” / “회 잘 아는 손님이 ‘여긴 다르다’고 했을 때”</div></div>
     </div>
     <div class="note"><b>소재 판별 4질문</b> — 하나라도 걸리면 콘텐츠가 된다
       <ul style="margin:6px 0 0">
-        <li>비린맛에 예민한 사람의 <b>기준과 연결</b>되나?</li>
-        <li>회가 어려운 사람에게 <b>안심</b>을 주나?</li>
+        <li>회가 <b>조심스러운 사람에게 안심</b>을 주나?</li>
+        <li>“몰라도 <b>알게 되는</b>” 발견이 있나?</li>
         <li>도미다리를 <b>더 믿게</b> 만드나?</li>
         <li>작은 가게를 <b>브랜드로 키워가는 과정</b>으로 보이나?</li>
       </ul>
@@ -123,9 +129,13 @@
   </section>
 
   <section>
-    <h2><span class="n">5</span>한 줄로 꿰기</h2>
-    <div class="lead">도미다리 콘텐츠 = <span>비린맛에 예민한 아내가, 회를 좋아하는 남편과 함께, 회가 어려운 사람도 편하게 먹을 수 있는 횟집을 만들어가는 기록.</span></div>
-    <div class="flag"><b>표현 정제(도미다리 결)</b> — 비린맛을 “없앤다” ❌ → <b>“덜어낸다·잡아낸다”</b> ⭕ / “맛있다” 단정보다 <b>“맛이 다르다·편하게 먹을 수 있다”</b> / 자랑(알림)보다 <b>기준(설명)</b>.</div>
+    <h2><span class="n">5</span>왜 이 구조인가 — 강의 기준 검증</h2>
+    <ul>
+      <li><b>소문설계</b>: ‘더 낫다(신선·맛)’ ❌ → ‘다르다(회 안심)’ ⭕ 선이 그어짐. + <b>옮겨 말할 수 있음</b>(“나 회 몰랐는데 차이를 알게 됐어” = 발견형 자랑).</li>
+      <li><b>시장 우선주의</b>: 손님이 원하는 건 ‘물기 제거’가 아니라 <b>‘실패 안 함·안심’</b>. → 안심을 앞(간판), 물기를 뒤(증거)로. 정확히 시장 우선.</li>
+      <li><b>도미다리 결</b>: ‘감별 시험’(차가움) 아니라 ‘발견’(따뜻함) → 진정성·차분함 유지.</li>
+    </ul>
+    <div class="flag"><b>표현 정제(도미다리 결)</b> — 비린맛 “없앤다” ❌ → <b>“덜어낸다·잡아낸다”</b> ⭕ / “맛있다” 단정보다 <b>“편하게 먹을 수 있다·기억이 달라진다”</b> / 자랑(알림)보다 <b>기준(설명)</b>. 부정어(비리다)는 본문 설명에만, 간판은 긍정으로.</div>
   </section>
 
   <footer>소문설계 1기 · 4주차 개별 과제 — 소문 저장소(자기 채널) · 동래도미다리횟집 김서아</footer>
