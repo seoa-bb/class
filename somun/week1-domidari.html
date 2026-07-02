@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>도미다리 소문설계 개인과제 · 제출용</title>
+<style>
+  :root{
+    --bg:#faf7f1; --paper:#fffefb; --ink:#2d2926; --muted:#6b635a;
+    --line:#e0d8c9; --soft:#f1e9da; --brown:#7d6b3d; --deep:#2d2926;
+    --gold:#7d6b3d; --amber:#c79a4a; --cream:#fbf8f1; --olive:#6d795d; --red:#9b5f4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Pretendard","Apple SD Gothic Neo","Noto Sans KR",Segoe UI,sans-serif;line-height:1.7;word-break:keep-all}
+  .wrap{max-width:1080px;margin:0 auto;padding:46px 22px 90px}
+  .hero{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:54px;box-shadow:0 18px 50px rgba(45,41,38,.09);position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;right:-130px;top:-130px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(199,154,74,.16),rgba(199,154,74,0) 70%)}
+  .eyebrow{display:inline-flex;border:1px solid var(--line);background:#fbf8f1;color:var(--gold);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:800;margin-bottom:22px}
+  h1{font-size:46px;line-height:1.18;letter-spacing:-.05em;margin:0 0 18px;font-weight:850;max-width:860px}
+  h2{font-size:30px;letter-spacing:-.045em;line-height:1.26;margin:0 0 14px;font-weight:820}
+  h3{font-size:20px;letter-spacing:-.03em;margin:24px 0 8px;color:var(--deep)}
+  p{margin:8px 0}.lead{font-size:20px;color:var(--muted);max-width:840px}.small{font-size:13px;color:var(--muted)}
+  section{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:38px;margin:24px 0;box-shadow:0 10px 32px rgba(45,41,38,.05)}
+  .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px 0 0}
+  .toc a{display:block;text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px 16px;font-weight:750}.toc a span{display:block;color:var(--muted);font-weight:500;font-size:13px;margin-top:2px}
+  .quote{border-left:5px solid var(--amber);padding:14px 0 14px 20px;margin:20px 0;font-size:21px;font-weight:800;line-height:1.5;letter-spacing:-.03em;background:linear-gradient(90deg,rgba(241,233,218,.6),transparent)}
+  .formula{background:var(--deep);color:#fff;border-radius:22px;padding:28px;margin:20px 0;font-size:20px;font-weight:850;text-align:center;line-height:1.55}.formula span{color:#e9c485}
+  .table{border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:16px 0;background:var(--cream)}.row{display:grid;grid-template-columns:150px 1fr;border-bottom:1px solid var(--line)}.row:last-child{border-bottom:0}.cell{padding:16px 18px}.cell:first-child{background:var(--soft);font-weight:850;color:var(--gold)}
+  .badgood{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0}.bad{border:1px solid #dec3b8;background:#fff5f0;border-radius:16px;padding:20px}.good{border:1px solid #cbd8c3;background:#f6fbf2;border-radius:16px;padding:20px}.bad b{color:#9b5f4a;display:block;margin-bottom:6px}.good b{color:#5f7353;display:block;margin-bottom:6px}.bad p,.good p{margin:0;font-size:15.5px;color:var(--muted)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px}
+  .card{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:20px}.card b{display:block;font-size:17px;margin-bottom:6px}.card p{color:var(--muted);margin:0;font-size:15px}
+  .note{background:#f4ecda;border:1px solid #ddccb0;border-radius:18px;padding:18px 20px;margin:18px 0}.note b{color:var(--brown)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chip{background:var(--soft);border:1px solid var(--line);color:var(--gold);border-radius:999px;padding:6px 13px;font-size:14px;font-weight:700}
+  ul{margin:8px 0 12px 22px;padding:0}li{margin:6px 0}.muted{color:var(--muted)}
+  footer{text-align:center;color:var(--muted);font-size:13px;margin-top:32px}
+  @media print{body{background:#fff}.wrap{max-width:none;padding:0}.hero,section{box-shadow:none;break-inside:avoid}.toc{display:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="hero">
+    <div class="eyebrow">소문설계 1기 · 개인과제 · 동래도미다리횟집 · 제출용</div>
+    <h1>회 못 드시는 분까지,<br>일행 전부가 편안한 횟집</h1>
+    <p class="lead">시장 우선주의 관점으로 현재 운영 중인 도미다리에 소문설계를 적용한다. <b>‘회 좋아하는 사람’이 아니라, 회 못 먹는 가족·부모님과 함께 갈 곳을 찾던 ‘모임 주선자’를 시장으로 규정</b>한다.</p>
+    <p class="small" style="margin-top:18px">개인 과제 양식 — “시장 우선주의의 관점으로 대상·욕구·해결거리를 배운 대로 정리해 보기.”</p>
+  </div>
+
+  <nav class="toc">
+    <a href="#core">★ 과제 핵심 한 장<span>찾은 시장 · 발견한 욕구 · 해결 가치</span></a>
+    <a href="#market">1. 시장 규정<span>누가 소문내줄까</span></a>
+    <a href="#needs">2. 욕구 3단계<span>표면 · 내면 · 잠재</span></a>
+    <a href="#solve">3. 희소성 있는 연결<span>도미다리가 이미 하는 운영</span></a>
+    <a href="#rumor">4. 소문 문장<span>실제 고객 언어</span></a>
+  </nav>
+
+  <section id="core">
+    <h2>★ 과제 핵심 — 한 장 요약</h2>
+    <p class="muted">강의 과제 양식 그대로: <b>누구를 대상으로 · 어떤 욕구를 · 무엇으로 해결할 것인가.</b></p>
+    <div class="table">
+      <div class="row"><div class="cell">찾은 시장<br><span style="font-weight:500;color:var(--muted);font-size:13px">(누구에게)</span></div><div class="cell"><b>회는 좋아하지만, 일행 중 회 못 먹는 사람·부모님·아이가 있어 횟집 데려가기가 망설여졌던 동래권 3040~5060 ‘모임 주선자(데려오는 사람)’.</b></div></div>
+      <div class="row"><div class="cell">발견한 욕구<br><span style="font-weight:500;color:var(--muted);font-size:13px">(어떤 욕구를)</span></div><div class="cell"><b>표면</b> — 신선하고 깔끔한 회를 부모님·가족과 먹고 싶다.<br><b>내면</b> — 회 못 먹는 사람·부모님·아이까지 누구도 눈치 안 보고 편하게 먹었으면.<br><b>잠재</b> — 내가 고른 자리가 잘 풀려 “좋은 데 데려왔다”는 말을 듣고 싶다(모임 주선자로서 인정).</div></div>
+      <div class="row"><div class="cell">해결 가치<br><span style="font-weight:500;color:var(--muted);font-size:13px">(무엇으로)</span></div><div class="cell"><b>인원수 강요 없는 주문 + 인원 기준으로 챙기는 사이드 + 회 못 먹어도 든든한 곁들임</b>으로 ‘누구와도 편안한 한 상’을 만든다. 요구하지 않아도 먼저 챙기는 방식으로, 다른 횟집의 ‘양·가성비’ 경쟁과 확실히 차별한다.</div></div>
+    </div>
+    <div class="formula">회 못 먹는 가족·부모님 때문에 횟집 데려가기가 부담스러웠던 <span>동래 모임 주선자</span>에게<br>일행 누구도 눈치 안 보고 편한 <span>‘누구와도 편안한 한 상’</span>을 경험시켜<br><span>“좋은 데 데려왔다”</span>는 말을 듣게 하는 횟집으로 소문나게 한다.</div>
+  </section>
+
+  <section id="market">
+    <h2>1. 시장 규정 — 누가 소문내줄까</h2>
+    <p class="muted">강의 핵심: “무엇을 소문낼지보다 누가 소문낼지를 먼저.” 가장 열광하고 + 남에게 말하기 좋아하는 대상을 정한다.</p>
+    <div class="badgood">
+      <div class="bad"><b>흔한 시장 규정 (탈락)</b><p>“회 좋아하는 사람” → 신선·푸짐·가성비로 경쟁(시장형 횟집). 모두가 하는 이야기라 소문이 안 난다.</p></div>
+      <div class="good"><b>도미다리의 재규정</b><p>“회는 좋아하지만, 일행 중 회 못 먹는 사람·부모님·아이가 있어 횟집 데려가기가 망설여졌던 모임 주선자.”</p></div>
+    </div>
+    <h3>왜 이 ‘모임 주선자’가 소문을 내줄까</h3>
+    <ul>
+      <li><b>가장 열광한다</b> — 자기가 고른 자리가 잘 풀리면 안도하고 뿌듯하다.</li>
+      <li><b>가장 잘 소문낸다</b> — “내가 데려갔는데 다들 좋아했다”는 건 곧 자기 자랑이라, 시키지 않아도 퍼뜨린다.</li>
+      <li>이미 도미다리에 나오는 실제 고객 언어가 증거다 → “친구 데려왔는데 다 좋아했어요”, “여긴 데려와도 괜찮겠다”, “회 못 먹는 친구도 잘 먹었어요”.</li>
+    </ul>
+    <div class="note"><b>도미다리 정체성과도 일치</b> — “회 좋아하는 한 사람이, 회 어려운 소중한 사람을 데려와도 모두가 편안할 수 있는 횟집.” 한 번 와본 분이 다음엔 더 소중한 사람을 데려오는 곳 — “또 왔어요”라는 말이 많은 이유다.</div>
+  </section>
+
+  <section id="needs">
+    <h2>2. 욕구 3단계 — 질문의 꼬리를 물어</h2>
+    <div class="table">
+      <div class="row"><div class="cell">표면욕구</div><div class="cell"><b>신선하고 깔끔한 회를, 부모님·가족과 먹고 싶다.</b> (부모님 모시고 갈 만한 횟집)</div></div>
+      <div class="row"><div class="cell">내면욕구</div><div class="cell"><b>회 못 먹는 사람·부모님·아이까지 누구도 눈치 안 보고</b> 편하게 먹었으면. 인원수·사이즈 압박 없이 편하게 시키고 싶다.</div></div>
+      <div class="row"><div class="cell">잠재욕구</div><div class="cell"><b>내가 고른 그 자리가 잘 풀려서 “좋은 데 데려왔다”는 말을 듣고 싶다.</b> (모임 주선자로서 인정받고 싶은 욕구)</div></div>
+    </div>
+    <div class="note"><b>강의와 같은 구조</b> — 부부싸움 예시의 잠재욕구(“집에서라도 존중받고 싶다”)와 똑같다. 가장 깊은 곳엔 ‘인정받고 싶은’ 잠재욕구가 있고, 이걸 건드려 해결하면 그 자체가 소문거리가 된다.</div>
+  </section>
+
+  <section id="solve">
+    <h2>3. 희소성 있는 연결 — 도미다리가 이미 하는 운영</h2>
+    <p class="muted">놀랍게도 도미다리가 <b>이미 하고 있는 운영</b>이 곧 잠재욕구의 해결책이다. 강의의 <b>‘넉넉하게 역설’</b>(요구 안 했는데 챙겨주면 → 빚 → 칭찬 → 소문)과 같은 구조.</p>
+    <div class="grid2">
+      <div class="card"><b>① 인원수 강요 없는 주문</b><p>사이즈는 ‘회 양’의 가이드일 뿐. 5명이어도 회 못 드시는 분이 있으면 ‘소’ 사이즈로 편하게.</p></div>
+      <div class="card"><b>② 사이드는 ‘인원’ 기준으로</b><p>미역국은 오신 분 수만큼 한 분도 빠짐없이. 5명+면 콘치즈·부추전 2세트. 1명 차이는 새우튀김 서비스로.</p></div>
+      <div class="card"><b>③ 회 못 먹어도 든든</b><p>콘치즈·부추전·열기구이·새우튀김·매운탕·회덮밥까지. 회가 처음이어도 자연스럽게.</p></div>
+      <div class="card"><b>④ 정갈한 코스 흐름</b><p>한 번에 다 내지 않고 따뜻한 건 따뜻할 때. 회식·기념일 자리에 어울리는 차분함.</p></div>
+    </div>
+    <div class="quote">→ 결과: “회 못 드시는 분, 부모님, 아이까지 일행 전부가 편안한 한 상.”</div>
+    <div class="badgood">
+      <div class="bad"><b>남들이 하는 이야기</b><p>“푸짐 / 가성비 / 신선 / 양 많음” — 시장이 다 듣는 말이라 소문이 안 난다.</p></div>
+      <div class="good"><b>도미다리의 희소한 연결</b><p>“일행 전부의 편안함” — 시장이 진짜 원하지만(잠재욕구) 아무도 그걸로 소문 안 내던 빈자리. 검색해도 “회 못 먹는 사람 데려가도 편한 횟집”은 잘 안 나온다.</p></div>
+    </div>
+  </section>
+
+  <section id="rumor">
+    <h2>4. 소문 문장 — 손님이 실제로 하는 말</h2>
+    <p class="muted">이 경험을 한 손님이 주변에 말하게 되는 문장(이미 도미다리에 나오는 고객 언어).</p>
+    <div class="chips">
+      <span class="chip">“거기는 회 못 먹는 사람 데려가도 편해.”</span>
+      <span class="chip">“부모님 모시고 가기 딱 좋아.”</span>
+      <span class="chip">“회 못 먹는 친구도 잘 먹었어.”</span>
+      <span class="chip">“여긴 데려와도 괜찮겠다.”</span>
+    </div>
+    <div class="note"><b>최종 한 줄</b><br>회는 좋아하지만 회 못 먹는 가족·부모님·아이 때문에 횟집 데려가기가 부담스러웠던 동래 모임 주선자들에게, 일행 누구도 눈치 안 보고 편한 ‘누구와도 편안한 한 상’을 경험시켜, “좋은 데 데려왔다”는 말을 듣게 해주는 횟집으로 소문나고 싶다.</div>
+  </section>
+
+  <footer>소문설계 1기 개인과제 · 동래도미다리횟집 · 김서아</footer>
+</main>
+</body>
+</html>
